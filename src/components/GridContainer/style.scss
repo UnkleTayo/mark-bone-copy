@@ -1,0 +1,12 @@
+.Grid-Container {
+  // margin: 10px 0;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  // grid-template-rows: repeat(auto-fit, 230px);
+  // grid-auto-flow: dense;
+  // grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-rows: repeat(auto-fit, 200px);
+}
