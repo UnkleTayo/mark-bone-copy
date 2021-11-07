@@ -50,16 +50,6 @@ const Header = () => {
                 <li className="page-collection">
                   <Link to="/about">About</Link>
                 </li>
-
-                <li className="">
-                  <Link to="https://theartofdocumentary.com">
-                    ART OF DOCUMENTARY
-                  </Link>
-                </li>
-
-                <li className="">
-                  <Link to="https://sellfy.com/mark-bone/">SHOP</Link>
-                </li>
               </ul>
             </nav>
           </div>
@@ -89,7 +79,7 @@ const Header = () => {
             </li>
 
             <li className="folder-collection">
-              <Link to="/node_modules">STILLS</Link>
+              <div className="desktop-submenu">STILLS</div>
               <div className="subnav">
                 <ul>
                   <li className="blog-collection">
@@ -113,16 +103,6 @@ const Header = () => {
 
             <li className="page-collection">
               <Link to="/about">About</Link>
-            </li>
-
-            <li className="">
-              <Link to="https://theartofdocumentary.com">
-                ART OF DOCUMENTARY
-              </Link>
-            </li>
-
-            <li className="">
-              <Link to="https://sellfy.com/mark-bone/">SHOP</Link>
             </li>
           </ul>
         </nav>

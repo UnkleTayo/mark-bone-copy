@@ -1,11 +1,9 @@
 import GridContainer from '../components/GridContainer/GridContainer'
-
+import { data } from '../data'
 const Home = () => {
   return (
     <div>
-      <div className="page-divider home"></div>
-      <GridContainer />
-      <div className="page-divider home"></div>
+      <GridContainer data={data} />
     </div>
   )
 }

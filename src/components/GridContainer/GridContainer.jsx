@@ -1,17 +1,12 @@
 import GridCell from '../GridCell/GridCell'
 import './style.scss'
-const GridContainer = () => {
+
+const GridContainer = ({ data }) => {
   return (
     <div className="Grid-Container">
-      <GridCell />
-      <GridCell />
-      <GridCell />
-      <GridCell />
-      <GridCell />
-      <GridCell />
-      <GridCell />
-      <GridCell />
-      <GridCell />
+      {data?.map((item) => (
+        <GridCell details={item} key={item.id} />
+      ))}
     </div>
   )
 }

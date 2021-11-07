@@ -1,15 +1,17 @@
 import './style.scss'
-import Image1 from '../../assets/images/image-asset12.jpeg'
-const GridCell = () => {
+import { useHistory } from 'react-router'
+const GridCell = ({ details }) => {
+  let history = useHistory()
+  const handleRouting = () => history.push(details.name)
   return (
-    <div className="cell-container">
+    <div onClick={handleRouting} className="cell-container">
       <div className="overlay"></div>
       {/* <div className="project-image"> */}
-      <img src={Image1} alt="bg" />
+      <img src={details.thumbnail} alt="bg" />
       {/* </div> */}
       <div className="project-item-count">2</div>
       <div className="project-title">
-        <span>BAG</span>
+        <span>{details.title}</span>
       </div>
     </div>
   )

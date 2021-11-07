@@ -68,7 +68,7 @@
             }
 
             .mobile-submenu {
-              font-family: freight-sans-pro;
+              font-family: 'freight-sans-pro', sans-serif;
               font-weight: 400;
               font-style: normal;
               line-height: 0em;
@@ -81,6 +81,7 @@
               line-height: 2.5em;
               display: block;
               text-align: center;
+              cursor: pointer;
             }
           }
 
@@ -182,7 +183,23 @@
             color: #000;
           }
         }
-
+        .desktop-submenu {
+          // font-family: 'freight-sans-pro', sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          line-height: 0em;
+          font-size: 15px;
+          text-transform: uppercase;
+          text-decoration: none;
+          letter-spacing: 1px;
+          color: #8a8a8a;
+          // color: rgba(158, 158, 158, 0.7);
+          font-size: 16px;
+          line-height: 2.5em;
+          display: block;
+          text-align: center;
+          cursor: pointer;
+        }
         .subnav {
           position: absolute;
           left: -50%;
