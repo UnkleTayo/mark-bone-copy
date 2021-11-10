@@ -1,21 +1,30 @@
 import FlexContainer from '../components/FlexContainer/FlexContainer'
-import Mark from '../assets/images/mark.jpg'
+import Ezic from '../assets/images/ezic.jpg'
 const About = () => {
   return (
     <div className="About">
       <FlexContainer>
         <div className="About-image__container">
-          <img src={Mark} alt="bone" className="profile" />
+          <img src={Ezic} alt="bone" className="profile" />
         </div>
         <div className="About-content">
-          <h1>Mark Bone</h1>
+          <h1>Ezekiah Akande</h1>
 
           <div className="About-moreContent">
             <p className="">
-              Mark Bone is a passionate, award winning, multi-talented
-              documentary and commercial director based in Toronto, Canada.
+              Ezekiah Akande is highly motivated narrative filmmaker currently
+              based in Lagos Nigeria, passionate about telling stories of people
+              and brands with 8years of visual storytelling experience
+              directing, filming, editing and producing video content.
             </p>
-            <p className="">
+            <p>
+              Eager to bring fresh perspective to the film industry. Directed
+              award winning mini documentaries “Disability, Quarantine
+              Chronicle, Uncle Steven”, Short films “Dear Kame, Sour grape, and
+              commercial. Have an extensive portfolio that demonstrates
+              originality in every of my work.
+            </p>
+            {/* <p className="">
               Mark was first inspired to pursue documentary filmmaking when he
               spent time as an aid worker during the Darfur war helping refugees
               who were fleeing into Egypt. Mark has directed numerous
@@ -34,13 +43,20 @@ const About = () => {
               such Mercedes Benz, Nike, BMW and Nikon. His work focuses on
               characters in the midst of conflict or crisis, capturing their
               story with a dynamic cinematic verite style.&nbsp;
-            </p>
-            <p className="">Check him out on youtube.com/markandrewbone</p>
+            </p> */}
             <p className="">
+              Check him out on{' '}
+              <a href="https://youtube.com/c/EzekiahAkande">YouTube</a>
+            </p>
+            {/* <p className="">
               Mark also offers consulting on documentaries. Book a meeting{' '}
               <a href="https://superpeer.com/markbone">here</a>
+            </p> */}
+            {/* <p className="">Contact:&nbsp;mark@markbone.com</p> */}
+            <p>
+              Contact:&nbsp;
+              <a href="mailto:mark@markbone.com">mark@markbone.com</a>
             </p>
-            <p className="">Contact:&nbsp;mark@markbone.com</p>
             <p className="">&nbsp;</p>
           </div>
         </div>

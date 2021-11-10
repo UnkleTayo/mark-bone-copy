@@ -9,6 +9,14 @@ import Home from './Pages/Home'
 import Stills from './Pages/Stills'
 
 function App() {
+  // const [loading, setLoading] = useState(true)
+
+  // useEffect(() => {
+  //   loading
+  //     ? document.querySelector('body').classList.add('preloader')
+  //     : document.querySelector('body').classList.remove('preloader')
+  // }, [loading])
+
   return (
     <>
       <div className="App">
@@ -22,7 +30,7 @@ function App() {
             <Stills />
           </Route>
           <Route exact path="/">
-            {/* <PreLoader /> */}
+            <PreLoader />
             <Home />
           </Route>
         </Switch>

@@ -5,13 +5,13 @@ const Footer = () => {
   return (
     <section className="Footer">
       <div className="social-links">
-        <a href="/">
+        <a href="https://vimeo.com/ezicfilmworks">
           <FaVimeo />
         </a>
-        <a href="/">
+        <a href="https://www.instagram.com/ezicfilmworks">
           <FaInstagram />
         </a>{' '}
-        <a href="/">
+        <a href="https://youtube.com/c/EzekiahAkande">
           <FaYoutube />
         </a>
       </div>

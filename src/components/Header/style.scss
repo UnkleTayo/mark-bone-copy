@@ -136,17 +136,17 @@
       margin: 0;
       font-family: 'Oswald', arial, sans-serif;
       font-weight: 400;
-      font-size: 46px;
       letter-spacing: 0px;
       font-family: 'proxima-nova', sans-serif;
       font-weight: 600;
       font-style: normal;
-      font-size: 73px;
       text-transform: uppercase;
       text-decoration: none;
       letter-spacing: 15px;
       display: inline-block;
       line-height: 1.2em;
+      font-size: 5vw;
+      margin: 10px 0;
       a {
         text-decoration: none;
         color: #000;
@@ -159,7 +159,7 @@
     }
 
     .logo-subtitle {
-      font-size: 22px;
+      font-size: 18px;
     }
   }
   .nav {

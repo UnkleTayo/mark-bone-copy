@@ -30,14 +30,14 @@ const Header = () => {
                         <li className="blog-collection">
                           <Link to="/black-white">BLACK &amp; WHITE</Link>
                         </li>
-
+                        {/* 
                         <li className="blog-collection">
                           <Link to="/commercial">COMMERCIAL</Link>
                         </li>
 
-                        <li className="blog-collection">
+                         <li className="blog-collection">
                           <Link to="/35mm">35MM/PORTRAIT</Link>
-                        </li>
+                        </li> */}
 
                         <li className="blog-collection">
                           <Link to="/instagram">INSTAGRAM</Link>
@@ -65,10 +65,10 @@ const Header = () => {
       </div>
       <div className="header-logo" id="logo" data-content-field="site-title">
         <h1 className="logo" style={{ letterSpacing: '0.205479em' }}>
-          <Link to="/">MARK BONE</Link>
+          <Link to="/">EZICFILMWORKS</Link>
         </h1>
         <div className="logo-subtitle" data-shrink-original-size="22">
-          DIRECTOR
+          Director || Cinematographer || Motion Designer
         </div>
       </div>
       <div id="topNav" className="desktop-menu">
@@ -85,14 +85,14 @@ const Header = () => {
                   <li className="blog-collection">
                     <Link to="/black-white">BLACK &amp; WHITE</Link>
                   </li>
-
+                  {/* 
                   <li className="blog-collection">
                     <Link to="/commercial">COMMERCIAL</Link>
                   </li>
 
                   <li className="blog-collection">
                     <Link to="/35mm">35MM/PORTRAIT</Link>
-                  </li>
+                  </li> */}
 
                   <li className="blog-collection">
                     <Link to="/instagram">INSTAGRAM</Link>

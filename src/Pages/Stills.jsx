@@ -6,6 +6,7 @@ import { data } from '../data'
 
 const Stills = () => {
   const { page } = useParams()
+  console.log(useParams())
   const [pageData, setPageData] = useState({})
   useEffect(() => {
     let i = data.filter((item) => item.name === page)
