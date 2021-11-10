@@ -40,7 +40,13 @@ const Header = () => {
                         </li> */}
 
                         <li className="blog-collection">
-                          <Link to="/instagram">INSTAGRAM</Link>
+                          <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://www.instagram.com/ezicfilmworks"
+                          >
+                            INSTAGRAM
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -95,7 +101,9 @@ const Header = () => {
                   </li> */}
 
                   <li className="blog-collection">
-                    <Link to="/instagram">INSTAGRAM</Link>
+                    <a href="https://www.instagram.com/ezicfilmworks">
+                      INSTAGRAM
+                    </a>
                   </li>
                 </ul>
               </div>
