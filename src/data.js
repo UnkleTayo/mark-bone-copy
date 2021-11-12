@@ -28,15 +28,6 @@ export const data = [
   },
   {
     id: uuidv4(),
-    name: 'barry',
-    title: 'BARRY',
-    thumbnail: Img2,
-    imageTitle:
-      'Simply drag and drop photos and videos into your workspace to automatically add them to your Collab Cloud library.',
-    crew: ['Director: Mark dOE', 'Art Director: Jordan dteye'],
-  },
-  {
-    id: uuidv4(),
     name: 'disability',
     title: 'Disability',
     thumbnail: Img3,
