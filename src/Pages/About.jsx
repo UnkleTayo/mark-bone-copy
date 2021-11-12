@@ -54,6 +54,9 @@ const About = () => {
             </p> */}
             {/* <p className="">Contact:&nbsp;mark@markbone.com</p> */}
             <p>
+            Ezic also offers consulting on documentaries. Book a meeting here
+            </p>
+            <p>
               Contact:&nbsp;
               <a href="mailto:mark@markbone.com">mark@markbone.com</a>
             </p>

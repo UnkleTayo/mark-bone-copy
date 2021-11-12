@@ -3,10 +3,10 @@ import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import GridContainer from '../components/GridContainer/GridContainer'
 import { data } from '../data'
+import ReactPlayer from 'react-player'
 
 const Stills = () => {
   const { page } = useParams()
-  console.log(useParams())
   const [pageData, setPageData] = useState({})
   useEffect(() => {
     let i = data.filter((item) => item.name === page)
@@ -22,7 +22,8 @@ const Stills = () => {
       <div className="Stills">
         <h1>{pageData.title}</h1>
         <div className="still-image">
-          <img src={pageData.thumbnail} alt={pageData.name} />
+          {/* <img src={pageData.thumbnail} alt={pageData.name} /> */}
+          <ReactPlayer width={`100%`} height={`500px`} url={pageData.videoUrl} />
           <div className="image-meta">
             <strong>{pageData.title}</strong>
           </div>

@@ -30,8 +30,8 @@
     color: $white;
 
     @include media('<=phone') {
-      font-size: 17px;
-      width: 240px;
+      font-size: 14px;
+      min-width: 240px;
     }
   }
 }

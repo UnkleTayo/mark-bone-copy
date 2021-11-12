@@ -4,31 +4,30 @@ import Img3 from './assets/images/Screenshot2019-09-1620.12.312.png'
 import Img4 from './assets/images/Screenshot2B2019-09-092B16.09.422.jpg'
 import Img5 from './assets/images/image-asset5.jpeg'
 import Img6 from './assets/images/image-asset6.jpeg'
-import Img7 from './assets/images/image-asset7.jpeg'
-import Img8 from './assets/images/image-asset8.png'
-import Img9 from './assets/images/RescateThumbnailstaffpick-522.png'
+// import Img7 from './assets/images/image-asset7.jpeg'
+// import Img8 from './assets/images/image-asset8.png'
+// import Img9 from './assets/images/RescateThumbnailstaffpick-522.png'
+import { v4 as uuidv4 } from 'uuid';
+
 
 export const data = [
   {
-    id: 1,
-    name: 'design',
-    title: 'Design',
+    id: uuidv4(),
+    name: 'uncle-steven',
+    title: 'Uncle Steven',
     thumbnail: Img1,
     imageTitle:
-      'Simply drag and drop photos and videos into your workspace to automatically add them to your Collab Cloud library.',
+      'Steven Emeka leaves his home town in Ebonyi State to the big city; Lagos in search of his "Lagos Dream" and finds out; "there is more to dreaming than sleeping".',
     crew: [
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
+      'Director/Cinematographer: Ezekiah Akande ',
+     "Producer: Okechukwu Omeire ",
+     "Drone: Olafusi Olalekan",
+      "Editor: Favour Kayode "
     ],
+    videoUrl: "https://youtu.be/RJ_7BERIz5c"
   },
   {
-    id: 2,
+    id: uuidv4(),
     name: 'barry',
     title: 'BARRY',
     thumbnail: Img2,
@@ -37,130 +36,139 @@ export const data = [
     crew: ['Director: Mark dOE', 'Art Director: Jordan dteye'],
   },
   {
-    id: 3,
-    name: 'design2',
-    title: 'Design',
+    id: uuidv4(),
+    name: 'disability',
+    title: 'Disability',
     thumbnail: Img3,
-    imageTitle:
-      'Simply drag and drop photos and videos into your workspace to automatically add them to your Collab Cloud library.',
+    imageTitle:`Shuaib Gbadamosi, the individual whose everyday life is the subject of this short documentary, suffers from walking disability due to poor treatment of measles, which he had at a tender age. Not limited by his physical disability nor discouraged by the stigmatization experienced by most physically-challenged persons, Shuaib started cleaning Ikeja-along Bridge, a popular pedestrian bridge in Lagos, Nigeria since the past 15 years that the bridge was commissioned. 
+ His humanitarian service on the pedestrian bridge has been so commendable so much that majority of people who pass the bridge give him money, which he has been using in taking care of his wife and 5 children. He is willing to keep rendering this service and has appealed to the government to see this as a means of creating job opportunities for people who though are PHYSICALLY-CHALLENGED but NOT LAZY.`,
     crew: [
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
+      "Director - Ezekiah Akande",
+      "Producer- Popoola Rotimi",
+      "Script - Tomilola Vera",
+      "Editor -Michael Adesoye "
     ],
+    videoUrl: "https://youtu.be/4uoO35ti8s8"
   },
   {
-    id: 4,
-    name: 'design3',
-    title: 'Design',
+    id: uuidv4(),
+    name: 'rickety',
+    title: 'Rickety',
     thumbnail: Img4,
-    imageTitle:
-      'Simply drag and drop photos and videos into your workspace to automatically add them to your Collab Cloud library.',
+    imageTitle: 
+    `Sometimes you love a person because of all the reasons they’re not like you...Sometimes you love a person just because they feel like home.
+
+In this love drama, Femi realizes the right kind of love he needs; and finds love through Ivy, his love who doesn't show him love.
+    `,
     crew: [
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
+      "Producer: Oluchi Mary Nsofor",
+      'Director: Oluchi Mary Nsofor',
+      'Director of Photography: Ezekiah Akande',
+      'Written by: Oreoluwa Obaba',
+      "Executive Producer: Sulcata Entertainment",
+      "Production Managers: Hope Nwachukwu &  Tareila Nabena",
+      'Costumier: Kachi Onuoha',
+      'Establishment Shots: Walinteen Pro',
+      'Sound: Spyritmyx, Sam Dominic, Adeola Matti',
+      "Editor:Famous Odion Iraoya",
+      "Colourist:Famous Odion Iraoya",
+      "Production Assistants:Ufot Samuel, Victor Adesiyan, Omoha Joseph",
+      "Starring: Femi: Chris Okagbue, Ivy: Gbubemi Ejeye, Angela: Adefolake Otudeko",
+      `Special Thanks to: Zavandi Jewelry, Ibukun Adewunmi, Shaibu Husseini,Gbenga Babatunde, Williams Williams`,
+      "Year: 2019"
     ],
+    videoUrl: "https://youtu.be/tHtT-vLaNOw"
   },
   {
-    id: 5,
-    name: 'design4',
-    title: 'Design',
+    id: uuidv4(),
+    name: 'knorr',
+    title: 'Knorr #LoveAtFirstTaste',
     thumbnail: Img5,
     imageTitle:
       'Simply drag and drop photos and videos into your workspace to automatically add them to your Collab Cloud library.',
     crew: [
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
+      `Director: Ani "Ajefilmworks" James`,
+      `Producer: Esse Akwawa`,
+      `Executive Producer: Olamide Adedeji`,
+      `Production: Massive Dynamics`,
+      `AD/DOP/Editor/Motion Graphics: Salako Ayoola`,
+      `Camera: Canon C300 x3`,
+      `Camera: Ayodele "Chrysolite" Awolalu, Akande  Ezekiah, Israel Ajayi`,
+      `Gear Rental: Abazee Productions`,
+      `Lights: Muri`,
+      `Set Design: Mayowa`,
+      `Lenses: Rokinon 50mm, 85mm & Canon 24-70mm`,
+      `Sound: Zoom H6n`,
     ],
+    videoUrl: `https://youtu.be/pkBFZvzy6r4`
   },
   {
-    id: 6,
-    name: 'design',
-    title: 'Design5',
+    id: uuidv4(),
+    name: 'zuta',
+    title: 'Zuta',
     thumbnail: Img6,
     imageTitle:
       'Simply drag and drop photos and videos into your workspace to automatically add them to your Collab Cloud library.',
     crew: [
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
+      'Director: Ezekiah Akande',
+      'Cinematographer: Favour Kayode,  Ezekiah Akande',
+      "Editor : Favour Kayode",
     ],
+    videoUrl: `https://youtu.be/iX5BlxAVw0Q`
   },
-  {
-    id: 7,
-    name: 'design6',
-    title: 'Design',
-    thumbnail: Img7,
+    {
+    id: uuidv4(),
+    name: 'sour-grape',
+    title: 'Sour grape ',
+    thumbnail: Img6,
     imageTitle:
-      'Simply drag and drop photos and videos into your workspace to automatically add them to your Collab Cloud library.',
+      `Sour Grape is a story of a child who was deprived of education at a tender age.
+Child education should be considered a basic right to children, not be taken with levity.
+The short movie SOUR GRAPE drops soon... `,
     crew: [
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
+      'Director: Ezekiah Akande',
+      'Written by: Jide George',
+      "Studio: ezicfilmworks",
+      "AD: Olabode Izy",
+      "DOP : Onuchemustapha",
+      "DOP 2: ezicfilmworks",
+      "Set Designer/prop:  Ebae_empire & Godswill chima",
+      "Makeup: Prettyqueenbetty",
+      "BTS: tobi Ayodele",
+      "Editor: Favour Kayode",
+      "Storyboard: Fola Omidiora",
+      "Drone: Olalekan Olafusi"
     ],
+    videoUrl: `https://youtu.be/GiGdfEIBS7Q`
   },
-  {
-    id: 8,
-    name: 'design7',
-    title: 'Design',
-    thumbnail: Img8,
+      {
+    id: uuidv4(),
+    name: "quarantine-chronicles",
+    title: 'Quarantine Chronicles',
+    thumbnail: Img6,
     imageTitle:
-      'Simply drag and drop photos and videos into your workspace to automatically add them to your Collab Cloud library.',
+      `Sour Grape is a story of a child who was deprived of education at a tender age.
+Child education should be considered a basic right to children, not be taken with levity.
+The short movie SOUR GRAPE drops soon... `,
     crew: [
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
+      "Director /Cinematographer - Ezekiah Akande",
+      "Editor: Favour Kayode",
+      "Motion Design: Ezekiah Akande "
     ],
+    videoUrl: `https://youtu.be/2iygxnIA8GA`
   },
-  {
-    id: 9,
-    name: 'design8',
-    title: 'Design',
-    thumbnail: Img9,
+        {
+    id: uuidv4(),
+    name: "women-in-agriculture",
+    title: 'Women in Agriculture',
+    thumbnail: Img6,
     imageTitle:
-      'Simply drag and drop photos and videos into your workspace to automatically add them to your Collab Cloud library.',
-    crew: [
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-      'Director: Mark Bone',
-      'Art Director: Jordan Dunlop',
-    ],
+      `#WomeninAgriculture is a campaign geared towards supporting International Women’s day 2021.
+Women belong in all places where decisions are being made. It shouldn’t be that women are the exception.
+– Ruth Bader Ginsburg
+
+Syngenta supports communities without exempting women as we regard them to be essentials to the whole.`,
+    videoUrl: `https://youtu.be/IX-Oj1OUOWI`
   },
 ]
 
