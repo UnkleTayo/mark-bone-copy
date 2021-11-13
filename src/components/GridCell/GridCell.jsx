@@ -2,7 +2,7 @@ import './style.scss'
 import { useHistory } from 'react-router'
 const GridCell = ({ details }) => {
   let history = useHistory()
-  const handleRouting = () => history.push(details.name)
+  const handleRouting = () => history.push(`/${details.name}`)
   return (
     <div onClick={handleRouting} className="cell-container">
       <div className="overlay"></div>

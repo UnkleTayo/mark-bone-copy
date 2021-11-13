@@ -1,31 +1,35 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import GridContainer from '../components/GridContainer/GridContainer'
 import { data } from '../data'
 import ReactPlayer from 'react-player'
 
-const Stills = () => {
-  const { page } = useParams()
+const Stills = ({ still }) => {
+  const scrollRef = useRef()
+
   const [pageData, setPageData] = useState({})
   useEffect(() => {
-    let i = data.filter((item) => item.name === page)
-    setPageData({ ...i[0] })
-  }, [page])
+    scrollRef.current.scrollTo(0, 0)
+    setPageData(still)
+  }, [still])
 
   const handlePagination = (whereTo) => {
     console.log(whereTo)
     console.log(pageData)
   }
   return (
-    <>
+    <div ref={scrollRef}>
       <div className="Stills">
         <h1>{pageData.title}</h1>
         <div className="still-image">
           {/* <img src={pageData.thumbnail} alt={pageData.name} /> */}
-          <ReactPlayer width={`100%`} height={`500px`} url={pageData.videoUrl} />
+          <ReactPlayer
+            width={`100%`}
+            height={`500px`}
+            url={pageData?.videoUrl}
+          />
           <div className="image-meta">
-            <strong>{pageData.title}</strong>
+            <strong>{pageData?.title}</strong>
           </div>
         </div>
         {pageData?.imageTitle}
@@ -52,7 +56,7 @@ const Stills = () => {
         </div>
       </div>
       <GridContainer data={data} />
-    </>
+    </div>
   )
 }
 

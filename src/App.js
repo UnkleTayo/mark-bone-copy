@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Route, Switch } from 'react-router'
 import './App.scss'
 import Footer from './components/Footer/Footer'
@@ -5,17 +6,15 @@ import Header from './components/Header/Header'
 // eslint-disable-next-line no-unused-vars
 import PreLoader from './components/Preloader/PreLoader'
 import About from './Pages/About'
+import BlackWhite from './Pages/BlackWhite'
 import Home from './Pages/Home'
 import Stills from './Pages/Stills'
+import { data } from './data'
 
 function App() {
-  // const [loading, setLoading] = useState(true)
-
-  // useEffect(() => {
-  //   loading
-  //     ? document.querySelector('body').classList.add('preloader')
-  //     : document.querySelector('body').classList.remove('preloader')
-  // }, [loading])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <>
@@ -26,9 +25,20 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/:page">
-            <Stills />
+          <Route path="/black-white">
+            <BlackWhite />
           </Route>
+
+          {data.map((item) => {
+            return (
+              <Route
+                exact
+                path={'/' + item.name}
+                key={item.id}
+                children={<Stills still={item} />}
+              />
+            )
+          })}
           <Route exact path="/">
             <PreLoader />
             <Home />
