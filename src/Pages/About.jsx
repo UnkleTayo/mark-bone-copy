@@ -1,5 +1,5 @@
 import FlexContainer from '../components/FlexContainer/FlexContainer'
-import Ezic from '../assets/images/ezic.jpg'
+import Ezic from '../assets/ezic/ezic.jpg'
 const About = () => {
   return (
     <div className="About">
@@ -54,7 +54,7 @@ const About = () => {
             </p> */}
             {/* <p className="">Contact:&nbsp;mark@markbone.com</p> */}
             <p>
-            Ezic also offers consulting on documentaries. Book a meeting here
+              Ezic also offers consulting on documentaries. Book a meeting here
             </p>
             <p>
               Contact:&nbsp;

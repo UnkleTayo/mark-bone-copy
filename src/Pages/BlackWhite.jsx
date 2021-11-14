@@ -1,4 +1,5 @@
 import { bnw } from '../data'
+// import LazyLoad from 'react-lazy-load'
 const BlackWhite = () => {
   return (
     <div>

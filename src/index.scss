@@ -1,17 +1,12 @@
+@font-face {
+  font-family: 'AvenirLTStd';
+  src: local('AvenirLTStd'),
+    url('./assets/fonts/AvenirLTStd-Book.otf') format('truetype');
+  font-weight: bold;
+}
+
 body {
-  margin: 0 10px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: proxima-nova;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.3em;
-  font-size: 19px;
-  text-transform: none;
-  color: #545454;
+  font-family: 'AvenirLTStd', sans-serif;
 }
 
 code {
@@ -40,4 +35,11 @@ code {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+@font-face {
+  font-family: 'AvenirLTStd';
+  src: local('AvenirLTStd'),
+    url('./assets/fonts/AvenirLTStd-Black.otf') format('truetype');
+  font-weight: bold;
 }

@@ -1,26 +1,19 @@
-import Img1 from './assets/images/image-asset12.jpeg'
-import Img3 from './assets/images/Screenshot2019-09-1620.12.312.png'
-import Img4 from './assets/images/Screenshot2B2019-09-092B16.09.422.jpg'
-import Img5 from './assets/images/image-asset5.jpeg'
-import Img6 from './assets/images/image-asset6.jpeg'
+import Img1 from './assets/thumbnails/uncle-steven .png'
+import Img3 from './assets/thumbnails/disability.png'
+import Img4 from './assets/thumbnails/rickety.png'
+import Img5 from './assets/thumbnails/Knor.png'
+import Img6 from './assets/thumbnails/zuta.png'
+import Img7 from './assets/thumbnails/sour-grape.png'
+import Img8 from './assets/thumbnails/screenshot.png'
+import Img9 from './assets/thumbnails/sygenta.png'
 
-import Bw1 from './assets/ezic/FullSizeRender.jpg'
-import Bw2 from './assets/ezic/Snapseed 18.jpg'
-import Bw3 from './assets/ezic/Snapseed 5.jpg'
-import Bw4 from './assets/ezic/Snapseed 4.jpg'
-import Bw5 from './assets/ezic/Snapseed 2.jpg'
-import Bw6 from './assets/ezic/Snapseed 3.jpg'
-import Bw7 from './assets/ezic/Snapseed 4.jpg'
-import Bw8 from './assets/ezic/Snapseed 5.jpg'
-import Bw9 from './assets/ezic/Snapseed 6.jpg'
-import Bw10 from './assets/ezic/Snapseed 7.jpg'
-import Bw11 from './assets/ezic/Snapseed 8.jpg'
-import Bw12 from './assets/ezic/Snapseed 9.jpg'
-import Bw14 from './assets/ezic/Snapseed 10.jpg'
-import Bw15 from './assets/ezic/Snapseed 11.jpg'
-import Bw16 from './assets/ezic/Snapseed 11.jpg'
-import Bw17 from './assets/ezic/Snapseed 12.jpg'
-import Bw18 from './assets/ezic/Snapseed 14.jpg'
+import Bw1 from './assets/ezic/Snapseed 15.jpg'
+import Bw2 from './assets/ezic/Snapseed 10.jpg'
+import Bw3 from './assets/ezic/baby.JPG'
+import Bw4 from './assets/ezic/new.JPG'
+import Bw5 from './assets/ezic/Snapseed 3 2.jpg'
+import Bw6 from './assets/ezic/Snapseed 12.jpg'
+import Bw7 from './assets/ezic/FullSizeRender.jpg'
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -34,7 +27,7 @@ export const data = [
       'Steven Emeka leaves his home town in Ebonyi State to the big city; Lagos in search of his "Lagos Dream" and finds out; "there is more to dreaming than sleeping".',
     crew: [
       'Director/Cinematographer: Ezekiah Akande ',
-      'Producer: Okechukwu Omeire ',
+      'Producer: Okechukwu Omeire',
       'Drone: Olafusi Olalekan',
       'Editor: Favour Kayode ',
     ],
@@ -124,7 +117,7 @@ In this love drama, Femi realizes the right kind of love he needs; and finds lov
     id: uuidv4(),
     name: 'sour-grape',
     title: 'Sour grape ',
-    thumbnail: Img6,
+    thumbnail: Img7,
     imageTitle: `Sour Grape is a story of a child who was deprived of education at a tender age.
 Child education should be considered a basic right to children, not be taken with levity.
 The short movie SOUR GRAPE drops soon... `,
@@ -148,7 +141,7 @@ The short movie SOUR GRAPE drops soon... `,
     id: uuidv4(),
     name: 'quarantine-chronicles',
     title: 'Quarantine Chronicles',
-    thumbnail: Img6,
+    thumbnail: Img8,
     imageTitle: `Sour Grape is a story of a child who was deprived of education at a tender age.
 Child education should be considered a basic right to children, not be taken with levity.
 The short movie SOUR GRAPE drops soon... `,
@@ -163,7 +156,7 @@ The short movie SOUR GRAPE drops soon... `,
     id: uuidv4(),
     name: 'women-in-agriculture',
     title: 'Women in Agriculture',
-    thumbnail: Img6,
+    thumbnail: Img9,
     imageTitle: `#WomeninAgriculture is a campaign geared towards supporting International Women’s day 2021.
 Women belong in all places where decisions are being made. It shouldn’t be that women are the exception.
 – Ruth Bader Ginsburg
@@ -171,24 +164,14 @@ Women belong in all places where decisions are being made. It shouldn’t be tha
 Syngenta supports communities without exempting women as we regard them to be essentials to the whole.`,
     videoUrl: `https://youtu.be/IX-Oj1OUOWI`,
   },
+  {
+    id: uuidv4(),
+    name: 'Cinematography',
+    title: 'Cinematography',
+    thumbnail: Img9,
+    imageTitle: `STARGIPS POP WIT AREMU AFOLAYAN || OGOGO`,
+    videoUrl: `https://youtu.be/DKbc7qDVk2Q`,
+  },
 ]
 
-export const bnw = [
-  Bw1,
-  Bw2,
-  Bw3,
-  Bw4,
-  Bw5,
-  Bw6,
-  Bw7,
-  Bw8,
-  Bw9,
-  Bw10,
-  Bw11,
-  Bw12,
-  Bw15,
-  Bw14,
-  Bw16,
-  Bw17,
-  Bw18,
-]
+export const bnw = [Bw1, Bw2, Bw3, Bw4, Bw5, Bw6, Bw7]
