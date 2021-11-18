@@ -15,11 +15,12 @@ const PreLoader = () => {
   useEffect(() => {
     preLoaderAnim()
   }, [])
+
   return (
     <div className="preloader">
       <div className="texts-container">
+        <span>Cinéaste ,</span>
         <span>Director,</span>
-        <span>Cinematographer,</span>
         <span>Motion Designer.</span>
       </div>
     </div>

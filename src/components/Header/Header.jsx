@@ -52,7 +52,7 @@ const Header = () => {
                     </div>
                   )}
                 </li>
-                                <li className="page-collection">
+                <li className="page-collection">
                   <Link to="/motion-design">Motion Design</Link>
                 </li>
                 <li className="page-collection">
@@ -76,7 +76,7 @@ const Header = () => {
           <Link to="/">EZICFILMWORKS</Link>
         </h1>
         <div className="logo-subtitle" data-shrink-original-size="22">
-          Director | Cinematographer | Motion Designer
+          Cinéaste | Director | motion designer
         </div>
       </div>
       <div id="topNav" className="desktop-menu">

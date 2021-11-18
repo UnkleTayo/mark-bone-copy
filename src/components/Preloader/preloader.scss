@@ -28,10 +28,12 @@
     font-weight: 800;
     opacity: 0;
     color: $white;
-
+    font-size: 14px;
     @include media('<=phone') {
-      font-size: 14px;
       min-width: 240px;
+      span {
+        font-size: 12px;
+      }
     }
   }
 }
