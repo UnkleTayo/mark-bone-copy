@@ -2,11 +2,14 @@
   font-family: 'AvenirLTStd';
   src: local('AvenirLTStd'),
     url('./assets/fonts/AvenirLTStd-Book.otf') format('truetype');
-  font-weight: bold;
+  // font-weight: bold;
 }
-
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato'), url('./assets/fonts/Lato-Regular.ttf') format('truetype');
+}
 body {
-  font-family: 'AvenirLTStd', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 code {

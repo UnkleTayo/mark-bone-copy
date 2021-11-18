@@ -15,23 +15,23 @@ const MotionDesign = () => {
         <ReactPlayer
           width={`100%`}
           height={`500px`}
-          url={`https://youtu.be/cVGDoQuRpao`}
-        />
-      </div>{' '}
-      <div className="motion">
-        <ReactPlayer
-          width={`100%`}
-          height={`500px`}
-          url={`https://youtu.be/cVGDoQuRpao`}
-        />
-      </div>{' '}
-      <div className="motion">
-        <ReactPlayer
-          width={`100%`}
-          height={`500px`}
-          url={`https://youtu.be/cVGDoQuRpao`}
+          url={`https://vimeo.com/646164198`}
         />
       </div>
+      {/* <div className="motion">
+        <ReactPlayer
+          width={`100%`}
+          height={`500px`}
+          url={`https://youtu.be/cVGDoQuRpao`}
+        />
+      </div>{' '} */}
+      {/* <div className="motion">
+        <ReactPlayer
+          width={`100%`}
+          height={`500px`}
+          url={`https://youtu.be/cVGDoQuRpao`}
+        />
+      </div> */}
     </div>
   )
 }
