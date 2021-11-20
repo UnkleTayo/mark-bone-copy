@@ -12,6 +12,7 @@ import Stills from './Pages/Stills'
 import { data } from './data'
 import MotionDesign from './Pages/MotionDesign'
 import PageNotFound from './Pages/404-page'
+import { AnimatePresence, motion } from 'framer-motion'
 
 function App() {
   useEffect(() => {
@@ -19,8 +20,13 @@ function App() {
   }, [])
 
   return (
-    <>
-      <div className="App">
+    <AnimatePresence exitBeforeEnter>
+      <motion.div
+        className="App"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <Header />
         <div className="page-divider home"></div>
         <Switch>
@@ -53,8 +59,8 @@ function App() {
         </Switch>
         <div className="page-divider home"></div>
         <Footer />
-      </div>
-    </>
+      </motion.div>
+    </AnimatePresence>
   )
 }
 
