@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { AnimatePresence, motion } from 'framer-motion'
+import ReactPlayer from 'react-player'
 import { useHistory } from 'react-router'
 import GridContainer from '../components/GridContainer/GridContainer'
 import { data } from '../data'
-import ReactPlayer from 'react-player'
 
 const Stills = ({ still }) => {
   const scrollRef = useRef()
@@ -45,45 +46,53 @@ const Stills = ({ still }) => {
     }
   }
   return (
-    <div ref={scrollRef}>
-      <div className="Stills">
-        <h1>{pageData.title}</h1>
-        <div className="still-image">
-          {/* <img src={pageData.thumbnail} alt={pageData.name} /> */}
-          <ReactPlayer
-            width={`100%`}
-            height={`500px`}
-            url={pageData?.videoUrl}
-          />
-          <div className="image-meta">
-            <strong>{pageData?.title}</strong>
+    <AnimatePresence>
+      <motion.div
+        key="still"
+        ref={scrollRef}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <div className="Stills">
+          <h1>{pageData.title}</h1>
+          <div className="still-image">
+            {/* <img src={pageData.thumbnail} alt={pageData.name} /> */}
+            <ReactPlayer
+              width={`100%`}
+              height={`500px`}
+              url={pageData?.videoUrl}
+            />
+            <div className="image-meta">
+              <strong>{pageData?.title}</strong>
+            </div>
+          </div>
+          {pageData?.imageTitle}
+          {pageData?.crew?.map((member, idx) => (
+            <p key={idx}>{member}</p>
+          ))}
+        </div>
+        <div className="stills-navigation">
+          <Link to="/">Back To FILMS</Link>
+          <div className="projectNav">
+            <span
+              onClick={() => handlePagination('prev')}
+              className={`${prev && 'disable'}`}
+            >
+              prev
+            </span>{' '}
+            /
+            <span
+              onClick={() => handlePagination('next')}
+              className={`${next && 'disable'}`}
+            >
+              next
+            </span>
           </div>
         </div>
-        {pageData?.imageTitle}
-        {pageData?.crew?.map((member, idx) => (
-          <p key={idx}>{member}</p>
-        ))}
-      </div>
-      <div className="stills-navigation">
-        <Link to="/">Back To FILMS</Link>
-        <div className="projectNav">
-          <span
-            onClick={() => handlePagination('prev')}
-            className={`${prev && 'disable'}`}
-          >
-            prev
-          </span>{' '}
-          /
-          <span
-            onClick={() => handlePagination('next')}
-            className={`${next && 'disable'}`}
-          >
-            next
-          </span>
-        </div>
-      </div>
-      <GridContainer data={data} />
-    </div>
+        <GridContainer data={data} />
+      </motion.div>
+    </AnimatePresence>
   )
 }
 
