@@ -33,7 +33,6 @@ function App() {
           <Route path="/black-white">
             <BlackWhite />
           </Route>
-
           {data.map((item) => {
             return (
               <Route

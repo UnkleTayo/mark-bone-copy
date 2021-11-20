@@ -1,21 +1,48 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router'
 import GridContainer from '../components/GridContainer/GridContainer'
 import { data } from '../data'
 import ReactPlayer from 'react-player'
 
 const Stills = ({ still }) => {
   const scrollRef = useRef()
+  const history = useHistory()
 
   const [pageData, setPageData] = useState({})
+  const [prev, setPrev] = useState(false)
+  const [next, setNext] = useState(false)
   useEffect(() => {
     scrollRef.current.scrollTo(0, 0)
     setPageData(still)
   }, [still])
 
+  useEffect(() => {
+    const dataIndex = data.indexOf(still)
+    if (dataIndex < 1) {
+      setPrev(true)
+    } else if (dataIndex === data.length - 1) {
+      setNext(true)
+    }
+  }, [still])
+
   const handlePagination = (whereTo) => {
-    console.log(whereTo)
-    console.log(pageData)
+    const dataIndex = data.indexOf(still)
+    if (whereTo === 'prev') {
+      if (dataIndex < 1) {
+        setPrev(true)
+        return
+      }
+      history.push(`/${data[dataIndex - 1].name}`)
+    }
+
+    if (whereTo === 'next') {
+      if (dataIndex === data.length - 1) {
+        setNext(true)
+        return
+      }
+      history.push(`/${data[dataIndex + 1].name}`)
+    }
   }
   return (
     <div ref={scrollRef}>
@@ -42,14 +69,14 @@ const Stills = ({ still }) => {
         <div className="projectNav">
           <span
             onClick={() => handlePagination('prev')}
-            className="prev-project"
+            className={`${prev && 'disable'}`}
           >
             prev
           </span>{' '}
           /
           <span
             onClick={() => handlePagination('next')}
-            className="next-project"
+            className={`${next && 'disable'}`}
           >
             next
           </span>

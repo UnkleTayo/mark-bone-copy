@@ -169,7 +169,7 @@ Syngenta supports communities without exempting women as we regard them to be es
     name: 'Cinematography',
     title: 'Cinematography',
     thumbnail: Img9,
-    imageTitle: `STARGIPS POP WIT AREMU AFOLAYAN || OGOGO`,
+    imageTitle: `STARGIPS POP AD WIT AREMU AFOLAYAN || OGOGO`,
     videoUrl: `https://youtu.be/DKbc7qDVk2Q`,
   },
 ]

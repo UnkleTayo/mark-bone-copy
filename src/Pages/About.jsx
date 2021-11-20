@@ -58,7 +58,9 @@ const About = () => {
             </p>
             <p>
               Contact:&nbsp;
-              <a href="mailto:mark@markbone.com">mark@markbone.com</a>
+              <a href="mailto:ezicfilmworks@hotmail.com">
+                ezicfilmworks@hotmail.com
+              </a>
             </p>
             <p className="">&nbsp;</p>
           </div>

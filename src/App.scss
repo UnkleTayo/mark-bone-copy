@@ -112,6 +112,15 @@
 
   .projectNav {
     cursor: pointer;
+    span {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    .disable {
+      pointer-events: none;
+      color: rgb(173, 177, 171);
+      cursor: none;
+    }
   }
 }
 
