@@ -9,9 +9,7 @@ const GridCell = ({ details }) => {
   return (
     <div onClick={handleRouting} className="cell-container">
       <div className="overlay"></div>
-      {/* <div className="project-image"> */}
       <img src={details.thumbnail} alt="bg" />
-      {/* </div> */}
       <div className="project-item-count">2</div>
       <div className="project-title">
         <span>{details.title}</span>

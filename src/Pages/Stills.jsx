@@ -55,39 +55,41 @@ const Stills = ({ still }) => {
         exit={{ opacity: 0 }}
       >
         <div className="Stills">
-          <h1>{pageData.title}</h1>
-          <div className="still-image">
-            {/* <img src={pageData.thumbnail} alt={pageData.name} /> */}
-            <ReactPlayer
-              width={`100%`}
-              height={`500px`}
-              url={pageData?.videoUrl}
-            />
-            <div className="image-meta">
-              <strong>{pageData?.title}</strong>
+          <div className="Stills-container">
+            <h1>{pageData.title}</h1>
+            <div className="still-image">
+              {/* <img src={pageData.thumbnail} alt={pageData.name} /> */}
+              <ReactPlayer
+                width={`100%`}
+                height={`500px`}
+                url={pageData?.videoUrl}
+              />
+              <div className="image-meta">
+                <strong>{pageData?.title}</strong>
+              </div>
             </div>
+            {pageData?.imageTitle}
+            {pageData?.crew?.map((member, idx) => (
+              <p key={idx}>{member}</p>
+            ))}
           </div>
-          {pageData?.imageTitle}
-          {pageData?.crew?.map((member, idx) => (
-            <p key={idx}>{member}</p>
-          ))}
-        </div>
-        <div className="stills-navigation">
-          <Link to="/">Back To FILMS</Link>
-          <div className="projectNav">
-            <span
-              onClick={() => handlePagination('prev')}
-              className={`${prev && 'disable'}`}
-            >
-              prev
-            </span>{' '}
-            /
-            <span
-              onClick={() => handlePagination('next')}
-              className={`${next && 'disable'}`}
-            >
-              next
-            </span>
+          <div className="stills-navigation">
+            <Link to="/">Back To FILMS</Link>
+            <div className="projectNav">
+              <span
+                onClick={() => handlePagination('prev')}
+                className={`${prev && 'disable'}`}
+              >
+                prev
+              </span>{' '}
+              /
+              <span
+                onClick={() => handlePagination('next')}
+                className={`${next && 'disable'}`}
+              >
+                next
+              </span>
+            </div>
           </div>
         </div>
         <GridContainer data={data} />

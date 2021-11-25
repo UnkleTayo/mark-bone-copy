@@ -1,3 +1,5 @@
+@import './styles/breakpoints.scss';
+
 .App {
   position: relative;
   @media only screen and (min-width: 750px) {
@@ -61,6 +63,9 @@
 
 .Stills {
   text-align: center;
+  &-container {
+    padding: 16px;
+  }
   h1 {
     font-family: Oswald;
     font-weight: 300;
@@ -71,6 +76,10 @@
     text-decoration: none;
     letter-spacing: 1px;
     text-align: center;
+
+    @include media('<=tablet') {
+      font-size: 5vw;
+    }
   }
 
   .still-image {

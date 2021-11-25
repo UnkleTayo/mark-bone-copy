@@ -1,5 +1,5 @@
 import FlexContainer from '../components/FlexContainer/FlexContainer'
-import Ezic from '../assets/ezic/ezic.jpg'
+import Ezic from '../assets/images/Bio.png'
 const About = () => {
   return (
     <div className="About">
@@ -12,18 +12,24 @@ const About = () => {
 
           <div className="About-moreContent">
             <p className="">
-              Ezekiah Akande is highly motivated narrative filmmaker currently
+              Ezekiah Akande is a highly motivated narrative filmmaker currently
               based in Lagos Nigeria, passionate about telling stories of people
               and brands with 8years of visual storytelling experience
               directing, filming, editing and producing video content.
             </p>
             <p>
-              Eager to bring fresh perspective to the film industry. Directed
-              award winning mini documentaries “Disability, Quarantine
-              Chronicle, Uncle Steven”, Short films “Dear Kame, Sour grape, and
-              commercial. Have an extensive portfolio that demonstrates
-              originality in every of my work.
+              Eager to bring a fresh perspective to the film industry. Directed
+              mini documentaries,Short films, Commercials “Disability,
+              Quarantine Chronicle, Uncle Steven, Dear Kame, Sour grape". He has
+              an extensive portfolio that demonstrates originality in every of
+              his works.
             </p>
+            <p>
+              He has documented places and worked with several brands across
+              Africa. Mest Africa, Julikana - Kenya, WARIF - Lagos, Nigeria,
+              amongst others.{' '}
+            </p>
+            <p>Preserving history for the next Generation.</p>
             {/* <p className="">
               Mark was first inspired to pursue documentary filmmaking when he
               spent time as an aid worker during the Darfur war helping refugees

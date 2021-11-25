@@ -1,19 +1,21 @@
-import Img1 from './assets/thumbnails/uncle-steven .png'
-import Img3 from './assets/thumbnails/disability.png'
-import Img4 from './assets/thumbnails/rickety.png'
-import Img5 from './assets/thumbnails/Knor.png'
-import Img6 from './assets/thumbnails/zuta.png'
-import Img7 from './assets/thumbnails/sour-grape.png'
-import Img8 from './assets/thumbnails/screenshot.png'
-import Img9 from './assets/thumbnails/sygenta.png'
+import Img1 from './assets/images/uncle-steven .png'
+import Img3 from './assets/images/disability.png'
+import Img4 from './assets/images/rickety.png'
+import Img5 from './assets/images/Knor.png'
+import Img6 from './assets/images/zuta.png'
+import Img7 from './assets/images/sour-grape.png'
+import Img8 from './assets/images/screenshot.png'
+import Img9 from './assets/images/sygenta.png'
+import Img10 from './assets/images/SHOWREEL.png'
 
-import Bw1 from './assets/ezic/Snapseed 15.jpg'
-import Bw2 from './assets/ezic/Snapseed 10.jpg'
-import Bw3 from './assets/ezic/baby.JPG'
-import Bw4 from './assets/ezic/new.JPG'
-import Bw5 from './assets/ezic/Snapseed 3 2.jpg'
-import Bw6 from './assets/ezic/Snapseed 12.jpg'
-import Bw7 from './assets/ezic/FullSizeRender.jpg'
+import Bw1 from './assets/images/Snapseed 15.jpg'
+import Bw2 from './assets/images/Snapseed 10.jpg'
+import Bw3 from './assets/images/baby.JPG'
+import Bw4 from './assets/images/new.JPG'
+import Bw5 from './assets/images/Snapseed 3 2.jpg'
+import Bw6 from './assets/images/Snapseed 12.jpg'
+import Bw7 from './assets/images/FullSizeRender.jpg'
+import Bw8 from './assets/images/airplane-window.png'
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -79,7 +81,7 @@ In this love drama, Femi realizes the right kind of love he needs; and finds lov
   {
     id: uuidv4(),
     name: 'knorr',
-    title: 'Knorr #LoveAtFirstTaste',
+    title: 'Knor',
     thumbnail: Img5,
     imageTitle:
       'Simply drag and drop photos and videos into your workspace to automatically add them to your Collab Cloud library.',
@@ -166,12 +168,43 @@ Syngenta supports communities without exempting women as we regard them to be es
   },
   {
     id: uuidv4(),
-    name: 'Cinematography',
-    title: 'Cinematography',
+    name: 'star-grip',
+    title: 'STARGIPS POP AD',
     thumbnail: Img9,
     imageTitle: `STARGIPS POP AD WIT AREMU AFOLAYAN || OGOGO`,
     videoUrl: `https://youtu.be/DKbc7qDVk2Q`,
   },
+  {
+    id: uuidv4(),
+    name: 'aboki',
+    title: 'Aboki',
+    thumbnail: Img10,
+    imageTitle: 'Aboki means friend.',
+    crew: [
+      'Director: Ezekiah Akande ',
+      'Script: Opeyemi Adeyeye',
+      'Voice Over: Opeyemi Adeyeye',
+      'Studio: Endit Studios',
+    ],
+    videoUrl: 'https://vimeo.com/643167848',
+  },
+  {
+    id: uuidv4(),
+    name: 'dear-kame',
+    title: 'Dear Kame',
+    thumbnail: Img1,
+    imageTitle: `Kame, tired of life decides to take her own life just as Dante the love of her life shows. Dante is of the opinion that she left him after promising eternity but she has a different perspective.
+
+Dear Kame is a short story that centers around love, loss, and grief.`,
+    crew: [
+      'Director/Cinematographer: Ezekiah Akande ',
+      'Casts: Zikki Alloy,  Ekemini Nankere',
+      'Project Category: Short Film ',
+      'Project Year: 2021',
+      `Editor: Favour Kayode, script writer: Shalom Kris`,
+    ],
+    videoUrl: 'https://youtu.be/SnL0V8oZI_A',
+  },
 ]
 
-export const bnw = [Bw1, Bw2, Bw3, Bw4, Bw5, Bw6, Bw7]
+export const bnw = [Bw1, Bw2, Bw3, Bw4, Bw5, Bw6, Bw7, Bw8]
