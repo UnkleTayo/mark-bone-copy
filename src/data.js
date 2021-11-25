@@ -205,6 +205,21 @@ Dear Kame is a short story that centers around love, loss, and grief.`,
     ],
     videoUrl: 'https://youtu.be/SnL0V8oZI_A',
   },
+  {
+    id: uuidv4(),
+    name: 'show-reel',
+    title: 'Show Reel',
+    thumbnail: Img10,
+    imageTitle:
+      'Steven Emeka leaves his home town in Ebonyi State to the big city; Lagos in search of his "Lagos Dream" and finds out; "there is more to dreaming than sleeping".',
+    crew: [
+      'Director/Cinematographer: Ezekiah Akande ',
+      'Producer: Okechukwu Omeire',
+      'Drone: Olafusi Olalekan',
+      'Editor: Favour Kayode ',
+    ],
+    videoUrl: 'https://youtu.be/vIY9s7BeIQA',
+  },
 ]
 
 export const bnw = [Bw1, Bw2, Bw3, Bw4, Bw5, Bw6, Bw7, Bw8]
