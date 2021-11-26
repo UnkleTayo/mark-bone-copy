@@ -14,7 +14,7 @@
         margin-bottom: 15px;
         visibility: collapse;
         display: none;
-        transition: visibility 1s cubic-bezier(0.23, 1, 0.32, 1) display 1s
+        transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) display 1s
           cubic-bezier(0.23, 1, 0.32, 1);
 
         &.show {
@@ -62,16 +62,20 @@
               text-transform: uppercase;
               text-decoration: none;
               letter-spacing: 1px;
-              color: rgba(158, 158, 158, 0.7);
+              color: #fff;
               font-size: 16px;
               line-height: 2.5em;
               display: block;
               text-align: center;
+              transition: visibility 1s cubic-bezier(0.23, 1, 0.32, 1);
+
+              &:hover {
+                color: rgba(158, 158, 158, 0.7);
+              }
             }
 
             .mobile-submenu {
               font-family: 'Lato', sans-serif;
-
               font-weight: 400;
               font-style: normal;
               line-height: 0em;
@@ -79,12 +83,18 @@
               text-transform: uppercase;
               text-decoration: none;
               letter-spacing: 1px;
-              color: rgba(158, 158, 158, 0.7);
+
+              color: #fff;
               font-size: 16px;
               line-height: 2.5em;
               display: block;
               text-align: center;
               cursor: pointer;
+              transition: visibility 1s cubic-bezier(0.23, 1, 0.32, 1);
+
+              &:hover {
+                color: rgba(158, 158, 158, 0.7);
+              }
             }
           }
 
@@ -96,7 +106,9 @@
                 li {
                   padding: 0;
                   a {
+                    display: block;
                     padding: 0;
+                    margin: 5px 0;
                     line-height: 1.3;
                   }
                 }
@@ -151,7 +163,8 @@
       margin: 10px 0;
       a {
         text-decoration: none;
-        color: #000;
+        color: #fff;
+
         transition: all 0.1s ease-in-out;
 
         &:hover {
@@ -178,24 +191,23 @@
           text-decoration: none;
           margin: 0 20px;
           text-transform: uppercase;
-          color: #8a8a8a;
+          color: #fff;
           transition: all 0.1s ease-in-out;
-
+          font-size: 14px;
           &:hover {
-            color: #000;
+            color: #8a8a8a;
           }
         }
         .desktop-submenu {
           font-family: 'Lato', sans-serif;
-
           font-weight: 400;
           font-style: normal;
           line-height: 0em;
-          font-size: 15px;
+          font-size: 14px;
           text-transform: uppercase;
           text-decoration: none;
           letter-spacing: 1px;
-          color: #8a8a8a;
+          color: #fff;
           // color: rgba(158, 158, 158, 0.7);
           font-size: 16px;
           line-height: 2.5em;
@@ -230,10 +242,17 @@
                 white-space: nowrap;
                 display: block;
                 padding: 8px 30px;
-                font-size: 14px;
+                font-size: 12px;
+                color: #000;
                 text-transform: uppercase;
                 text-decoration: none;
                 letter-spacing: 1px;
+                transition: 0.1s ease-in-out
+                  cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+                &:hover {
+                  color: #8a8a8a;
+                }
               }
             }
           }

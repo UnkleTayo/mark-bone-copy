@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import ReactPlayer from 'react-player'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 import { useHistory } from 'react-router'
 import GridContainer from '../components/GridContainer/GridContainer'
 import { data } from '../data'
@@ -9,6 +10,7 @@ import { data } from '../data'
 const Stills = ({ still }) => {
   const scrollRef = useRef()
   const history = useHistory()
+  const isPageWide = useMediaQuery('(min-width: 768px)')
 
   const [pageData, setPageData] = useState({})
   const [prev, setPrev] = useState(false)
@@ -61,9 +63,27 @@ const Stills = ({ still }) => {
               {/* <img src={pageData.thumbnail} alt={pageData.name} /> */}
               <ReactPlayer
                 width={`100%`}
-                height={`500px`}
+                height={isPageWide ? '500px' : '350px'}
                 url={pageData?.videoUrl}
               />
+              <div className="stills-navigation">
+                <Link to="/">Back To FILMS</Link>
+                <div className="projectNav">
+                  <span
+                    onClick={() => handlePagination('prev')}
+                    className={`${prev && 'disable'}`}
+                  >
+                    prev
+                  </span>{' '}
+                  /
+                  <span
+                    onClick={() => handlePagination('next')}
+                    className={`${next && 'disable'}`}
+                  >
+                    next
+                  </span>
+                </div>
+              </div>
               <div className="image-meta">
                 <strong>{pageData?.title}</strong>
               </div>
@@ -73,7 +93,7 @@ const Stills = ({ still }) => {
               <p key={idx}>{member}</p>
             ))}
           </div>
-          <div className="stills-navigation">
+          {/* <div className="stills-navigation">
             <Link to="/">Back To FILMS</Link>
             <div className="projectNav">
               <span
@@ -90,7 +110,7 @@ const Stills = ({ still }) => {
                 next
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
         <GridContainer data={data} />
       </motion.div>

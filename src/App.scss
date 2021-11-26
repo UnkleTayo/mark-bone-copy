@@ -7,7 +7,7 @@
   }
 
   .page-divider {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #8a8a8a;
 
     &.home {
       margin: 15px 0;
@@ -34,7 +34,7 @@
 
     h1 {
       white-space: pre-wrap;
-      color: #222;
+      color: #fff;
       font-family: 'Actor', sans-serif;
       font-weight: 400;
       font-style: normal;
@@ -43,6 +43,11 @@
       text-transform: none;
       text-decoration: none;
       letter-spacing: 3px;
+      transition: 0.1s ease-in-out cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+      &:hover {
+        color: #8a8a8a;
+      }
     }
 
     p {
@@ -57,6 +62,7 @@
       text-align: justify;
       word-wrap: break-word;
       white-space: pre-wrap;
+      color: #8a8a8a;
     }
   }
 }
@@ -106,7 +112,7 @@
   margin: 1rem 0;
 
   a {
-    color: #111;
+    color: #fff;
     text-decoration: none;
     transition: all 0.47s cubic-bezier(0.215, 0.61, 0.355, 1);
 
