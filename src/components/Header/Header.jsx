@@ -65,6 +65,9 @@ const Header = () => {
                   <li className="page-collection">
                     <Link to="/about">About</Link>
                   </li>
+                  <li className="page-collection">
+                    <Link to="/contact">Contact Me</Link>
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -123,6 +126,9 @@ const Header = () => {
             </li>
             <li className="page-collection">
               <Link to="/about">About</Link>
+            </li>
+            <li className="page-collection">
+              <Link to="/contact">Contact Me</Link>
             </li>
           </ul>
         </nav>

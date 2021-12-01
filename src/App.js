@@ -13,11 +13,36 @@ import { data } from './data'
 import MotionDesign from './Pages/MotionDesign'
 import PageNotFound from './Pages/404-page'
 import { AnimatePresence, motion } from 'framer-motion'
+import Contact from './Pages/Contact'
 
 function App() {
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
   }, [])
+
+  //   function setThemePreference() {
+  //   var d = new Date();
+  //   /*
+  //   * The getHours() method returns the hour (from 0 to 23) of the specified date and time.
+  //   * Day = 0 - 11
+  //   * Night = 12 - 23
+  //   */
+  //   var currentHour = d.getHours();
+
+  //   /*
+  //   * The dark theme load early morning and night
+  //   * The light theme load morning and evening
+  //   */
+
+  //   if(currentHour >= 19 || currentHour <= 6) {
+  //     document.body.setAttribute("data-theme", "dark_theme")
+  //   }else {
+  //     document.body.setAttribute("data-theme", "light_theme")
+  //   }
+  // }
 
   return (
     <AnimatePresence exitBeforeEnter>
@@ -38,6 +63,9 @@ function App() {
           </Route>
           <Route path="/black-white">
             <BlackWhite />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           {data.map((item) => {
             return (

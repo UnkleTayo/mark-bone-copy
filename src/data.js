@@ -7,6 +7,8 @@ import Img7 from './assets/images/sour-grape.png'
 import Img8 from './assets/images/screenshot.png'
 import Img9 from './assets/images/Syngenta.png'
 import Img10 from './assets/images/SHOWREEL.png'
+import Img11 from './assets/images/dear-kame.png'
+import Img12 from './assets/images/stargrips.png'
 
 import Bw1 from './assets/images/Snapseed 15.jpg'
 import Bw2 from './assets/images/Snapseed 10.jpg'
@@ -170,7 +172,7 @@ Syngenta supports communities without exempting women as we regard them to be es
     id: uuidv4(),
     name: 'star-grip',
     title: 'STARGIPS POP AD',
-    thumbnail: Img9,
+    thumbnail: Img12,
     imageTitle: `STARGIPS POP AD WIT AREMU AFOLAYAN || OGOGO`,
     videoUrl: `https://youtu.be/DKbc7qDVk2Q`,
   },
@@ -192,7 +194,7 @@ Syngenta supports communities without exempting women as we regard them to be es
     id: uuidv4(),
     name: 'dear-kame',
     title: 'Dear Kame',
-    thumbnail: Img1,
+    thumbnail: Img11,
     imageTitle: `Kame, tired of life decides to take her own life just as Dante the love of her life shows. Dante is of the opinion that she left him after promising eternity but she has a different perspective.
 
 Dear Kame is a short story that centers around love, loss, and grief.`,

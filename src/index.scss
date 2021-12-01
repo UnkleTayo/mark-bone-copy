@@ -1,15 +1,37 @@
+@import './styles/variables.scss';
+
 @font-face {
   font-family: 'AvenirLTStd';
   src: local('AvenirLTStd'),
     url('./assets/fonts/AvenirLTStd-Book.otf') format('truetype');
-  // font-weight: bold;
+  font-style: normal;
+  font-weight: 400;
 }
+
 @font-face {
   font-family: 'Lato';
   src: local('Lato'), url('./assets/fonts/Lato-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
 }
+
+@font-face {
+  font-family: 'AvenirLTStd';
+  src: local('AvenirLTStd'),
+    url('./assets/fonts/AvenirLTStd-Black.otf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'SpecialElite';
+  src: local('SpecialElite'),
+    url('./assets/fonts/SpecialElite-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'SpecialElite', sans-serif;
   background-color: black;
   color: #fff;
 }
@@ -40,11 +62,4 @@ code {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-@font-face {
-  font-family: 'AvenirLTStd';
-  src: local('AvenirLTStd'),
-    url('./assets/fonts/AvenirLTStd-Black.otf') format('truetype');
-  font-weight: bold;
 }

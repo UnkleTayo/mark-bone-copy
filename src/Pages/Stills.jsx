@@ -17,8 +17,16 @@ const Stills = ({ still }) => {
   const [next, setNext] = useState(false)
   useEffect(() => {
     scrollRef.current.scrollTo(0, 0)
+    scrollToTop()
     setPageData(still)
   }, [still])
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
 
   useEffect(() => {
     const dataIndex = data.indexOf(still)
@@ -88,9 +96,13 @@ const Stills = ({ still }) => {
                 <strong>{pageData?.title}</strong>
               </div>
             </div>
-            {pageData?.imageTitle}
+            <div className="still-description">
+              <p>{pageData?.imageTitle}</p>
+            </div>
             {pageData?.crew?.map((member, idx) => (
-              <p key={idx}>{member}</p>
+              <p className="page-text" key={idx}>
+                {member}
+              </p>
             ))}
           </div>
           {/* <div className="stills-navigation">

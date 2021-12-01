@@ -1,4 +1,5 @@
 @import '../../styles/breakpoints.scss';
+@import '../../styles/variables.scss';
 
 .header {
   @media only screen and (max-width: 750px) {
@@ -28,8 +29,8 @@
         display: block;
         margin: 0;
         font-size: 16px !important;
-        color: #9e9e9e;
-        font-family: 'Lato', sans-serif;
+        color: $hoveColor;
+        font-family: 'SpecialElite', sans-serif;
         /* font-weight: 400; */
         font-style: normal;
         line-height: 0em;
@@ -38,14 +39,14 @@
         text-decoration: none;
         letter-spacing: 1px;
         padding: 0 0 15px;
-        background-color: rgba(255, 255, 255, 0);
+        background-color: $gray;
         text-align: center;
       }
       .mobile-nav {
         ul {
           flex-direction: column;
           padding: 0;
-          font-family: 'Lato', sans-serif;
+          font-family: 'SpecialElite', sans-serif;
 
           font-weight: 400;
           font-style: normal;
@@ -53,7 +54,7 @@
           font-size: 19px;
           li {
             a {
-              font-family: 'Lato', sans-serif;
+              font-family: 'SpecialElite', sans-serif;
 
               font-weight: 400;
               font-style: normal;
@@ -62,7 +63,7 @@
               text-transform: uppercase;
               text-decoration: none;
               letter-spacing: 1px;
-              color: #fff;
+              color: $white;
               font-size: 16px;
               line-height: 2.5em;
               display: block;
@@ -70,12 +71,12 @@
               transition: visibility 1s cubic-bezier(0.23, 1, 0.32, 1);
 
               &:hover {
-                color: rgba(158, 158, 158, 0.7);
+                color: $hoveColor;
               }
             }
 
             .mobile-submenu {
-              font-family: 'Lato', sans-serif;
+              font-family: 'SpecialElite', sans-serif;
               font-weight: 400;
               font-style: normal;
               line-height: 0em;
@@ -84,7 +85,7 @@
               text-decoration: none;
               letter-spacing: 1px;
 
-              color: #fff;
+              color: $white;
               font-size: 16px;
               line-height: 2.5em;
               display: block;
@@ -93,7 +94,7 @@
               transition: visibility 1s cubic-bezier(0.23, 1, 0.32, 1);
 
               &:hover {
-                color: rgba(158, 158, 158, 0.7);
+                color: $hoveColor;
               }
             }
           }
@@ -151,7 +152,7 @@
       margin: 0;
       font-weight: 400;
       letter-spacing: 0px;
-      font-family: 'AvenirLTStd', sans-serif;
+      font-family: 'SpecialElite', sans-serif;
       font-weight: 600;
       font-style: normal;
       text-transform: uppercase;
@@ -163,12 +164,12 @@
       margin: 10px 0;
       a {
         text-decoration: none;
-        color: #fff;
+        color: $white;
 
         transition: all 0.1s ease-in-out;
 
         &:hover {
-          color: #8a8a8a;
+          color: $hoveColor;
         }
       }
     }
@@ -191,15 +192,15 @@
           text-decoration: none;
           margin: 0 20px;
           text-transform: uppercase;
-          color: #fff;
+          color: $white;
           transition: all 0.1s ease-in-out;
           font-size: 14px;
           &:hover {
-            color: #8a8a8a;
+            color: $hoveColor;
           }
         }
         .desktop-submenu {
-          font-family: 'Lato', sans-serif;
+          font-family: 'SpecialElite', sans-serif;
           font-weight: 400;
           font-style: normal;
           line-height: 0em;
@@ -207,8 +208,8 @@
           text-transform: uppercase;
           text-decoration: none;
           letter-spacing: 1px;
-          color: #fff;
-          // color: rgba(158, 158, 158, 0.7);
+          color: $white;
+          // color: $hoveColor;
           font-size: 16px;
           line-height: 2.5em;
           display: block;
@@ -218,7 +219,7 @@
         .subnav {
           position: absolute;
           left: -50%;
-          background: #fff;
+          background: $white;
           overflow: hidden;
           opacity: 1;
           z-index: 1000;
@@ -243,7 +244,7 @@
                 display: block;
                 padding: 8px 30px;
                 font-size: 12px;
-                color: #000;
+                color: $black;
                 text-transform: uppercase;
                 text-decoration: none;
                 letter-spacing: 1px;
@@ -251,7 +252,7 @@
                   cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
                 &:hover {
-                  color: #8a8a8a;
+                  color: $hoveColor;
                 }
               }
             }

@@ -5,6 +5,7 @@
   "dependencies": {
     "connected-react-router": "^6.9.1",
     "cra-template": "1.1.2",
+    "email-js": "^2.0.2",
     "framer-motion": "4.1.17",
     "gsap": "^3.8.0",
     "react": "^17.0.2",

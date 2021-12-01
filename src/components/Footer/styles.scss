@@ -1,3 +1,4 @@
+@import '../../styles/variables.scss';
 .Footer {
   display: flex;
   text-align: center;
@@ -8,13 +9,13 @@
   .social-links {
     a,
     a:visited {
-      color: #000;
+      color: $white;
       margin: 0 5px;
       transition: background-color 170ms ease-in-out;
     }
 
     &:hover {
-      color: #8a8a8a;
+      color: $gray;
 
       a:not(:hover) {
         color: #8a8a8a;
