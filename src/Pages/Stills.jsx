@@ -105,24 +105,7 @@ const Stills = ({ still }) => {
               </p>
             ))}
           </div>
-          {/* <div className="stills-navigation">
-            <Link to="/">Back To FILMS</Link>
-            <div className="projectNav">
-              <span
-                onClick={() => handlePagination('prev')}
-                className={`${prev && 'disable'}`}
-              >
-                prev
-              </span>{' '}
-              /
-              <span
-                onClick={() => handlePagination('next')}
-                className={`${next && 'disable'}`}
-              >
-                next
-              </span>
-            </div>
-          </div> */}
+
         </div>
         <GridContainer data={data} />
       </motion.div>

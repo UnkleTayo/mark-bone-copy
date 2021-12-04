@@ -30,11 +30,39 @@
   font-weight: 400;
 }
 
+:root {
+    --background-color: #fff;
+    --text-color: #121416d8;
+    --link-color: #543fd7;
+}
+
+body[data-theme='light'] {
+   --background-color: #fff;
+    --text-color: #000;
+    --hover-color: rgba(158, 158, 158, 0.7);
+    --subNav-color: #000;
+    --link-color:rgba(158, 158, 158, 0.7);
+    --prevColor: var(--link-color);
+}
+
+body[data-theme='dark'] {
+    --background-color: #000;
+    --text-color: #fff;
+    --link-color: rgba(158, 158, 158, 0.7);
+    --subNav-color: #000;
+    --hover-color:rgba(158, 158, 158, 0.7);
+    --prevColor:var(--link-color);
+}
+
 body {
   font-family: 'SpecialElite', sans-serif;
-  background-color: black;
-  color: #fff;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
+
+
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

@@ -9,14 +9,13 @@
   .social-links {
     a,
     a:visited {
-      color: $white;
+      color: var(--text-color);
       margin: 0 5px;
       transition: background-color 170ms ease-in-out;
     }
 
     &:hover {
-      color: $gray;
-
+      color: var(--hoverColor);
       a:not(:hover) {
         color: #8a8a8a;
       }

@@ -1,3 +1,4 @@
+
 @import './styles/breakpoints.scss';
 @import './styles/variables.scss';
 
@@ -44,6 +45,7 @@
       text-transform: none;
       text-decoration: none;
       letter-spacing: 3px;
+      color: var(--text-color);
       transition: 0.1s ease-in-out cubic-bezier(0.455, 0.03, 0.515, 0.955);
       &:hover {
         color: $hoveColor;
@@ -62,8 +64,13 @@
       text-align: justify;
       word-wrap: break-word;
       white-space: pre-wrap;
-      color: $hoveColor;
+      color: var(--text-color);
     }
+  }
+
+  a{
+    color: var(--text-color);
+    text-decoration: none;
   }
 }
 
@@ -90,6 +97,7 @@
 
   .still-image {
     text-align: center;
+
     img {
       width: 100%;
     }
@@ -131,7 +139,7 @@
       }
       .disable {
         pointer-events: none;
-        color: $gray;
+        color: var(--prevColor);
         cursor: none;
       }
     }

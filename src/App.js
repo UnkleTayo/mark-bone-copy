@@ -16,6 +16,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Contact from './Pages/Contact'
 
 function App() {
+    // const [themeState, setThemeState] = useState(false);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -23,26 +25,32 @@ function App() {
     })
   }, [])
 
-  //   function setThemePreference() {
-  //   var d = new Date();
-  //   /*
-  //   * The getHours() method returns the hour (from 0 to 23) of the specified date and time.
-  //   * Day = 0 - 11
-  //   * Night = 12 - 23
-  //   */
-  //   var currentHour = d.getHours();
+  useEffect(() => {
+    setThemePreference()
+  })
 
-  //   /*
-  //   * The dark theme load early morning and night
-  //   * The light theme load morning and evening
-  //   */
+  function setThemePreference() {
+    var d = new Date();
+    /*
+    * The getHours() method returns the hour (from 0 to 23) of the specified date and time.
+    * Day = 0 - 11
+    * Night = 12 - 23
+    */
+    var currentHour = d.getHours();
 
-  //   if(currentHour >= 19 || currentHour <= 6) {
-  //     document.body.setAttribute("data-theme", "dark_theme")
-  //   }else {
-  //     document.body.setAttribute("data-theme", "light_theme")
-  //   }
-  // }
+    /*
+    * The dark theme load early morning and night
+    * The light theme load morning and evening
+    */
+
+    if(currentHour >= 19 || currentHour <= 6) {
+      document.body.setAttribute("data-theme", "dark")
+      document.documentElement.setAttribute("data-theme", "dark")
+    }else {
+      document.body.setAttribute("data-theme", "light")
+      document.documentElement.setAttribute("data-theme", "light")
+    }
+  }
 
   return (
     <AnimatePresence exitBeforeEnter>
