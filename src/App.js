@@ -16,7 +16,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Contact from './Pages/Contact'
 
 function App() {
-    // const [themeState, setThemeState] = useState(false);
+  // const [themeState, setThemeState] = useState(false);
 
   useEffect(() => {
     window.scrollTo({
@@ -30,25 +30,25 @@ function App() {
   })
 
   function setThemePreference() {
-    var d = new Date();
+    var d = new Date()
     /*
-    * The getHours() method returns the hour (from 0 to 23) of the specified date and time.
-    * Day = 0 - 11
-    * Night = 12 - 23
-    */
-    var currentHour = d.getHours();
+     * The getHours() method returns the hour (from 0 to 23) of the specified date and time.
+     * Day = 0 - 11
+     * Night = 12 - 23
+     */
+    var currentHour = d.getHours()
 
     /*
-    * The dark theme load early morning and night
-    * The light theme load morning and evening
-    */
+     * The dark theme load early morning and night
+     * The light theme load morning and evening
+     */
 
-    if(currentHour >= 19 || currentHour <= 6) {
-      document.body.setAttribute("data-theme", "dark")
-      document.documentElement.setAttribute("data-theme", "dark")
-    }else {
-      document.body.setAttribute("data-theme", "light")
-      document.documentElement.setAttribute("data-theme", "light")
+    if (currentHour >= 19 || currentHour <= 6) {
+      document.body.setAttribute('data-theme', 'dark')
+      document.documentElement.setAttribute('data-theme', 'dark')
+    } else {
+      document.body.setAttribute('data-theme', 'light')
+      document.documentElement.setAttribute('data-theme', 'light')
     }
   }
 
