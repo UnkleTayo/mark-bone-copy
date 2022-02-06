@@ -8,8 +8,13 @@
   cursor: pointer;
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
+  // margin: 0;
+  // padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
   img {
     width: 100%;
     height: 100%;
@@ -56,6 +61,7 @@
       background: rgb(218, 217, 217);
       background: rebeccapurple;
       opacity: 0.43;
+      z-index: 5;
     }
 
     .project-title {

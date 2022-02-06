@@ -1,11 +1,18 @@
 import FlexContainer from '../components/FlexContainer/FlexContainer'
-import Ezic from '../assets/images/Bio.png'
+import EzicImage from '../assets/images/Bio.png'
+import { MyImage } from '../components/LazyImage'
+
+const ImageProp = {
+  thumbnail: EzicImage,
+  title: 'ezekiah-akande',
+}
+
 const About = () => {
   return (
     <div className="About">
       <FlexContainer>
         <div className="About-image__container">
-          <img src={Ezic} alt="bone" className="profile" />
+          <MyImage image={ImageProp} className="profile" />
         </div>
         <div className="About-content">
           <h1>Ezekiah Akande</h1>

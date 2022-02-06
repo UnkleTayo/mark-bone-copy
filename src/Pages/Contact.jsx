@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import emailjs from 'emailjs-com'
-import Swal from 'sweetalert2'
 import { toast, ToastBar, Toaster } from 'react-hot-toast'
 import { HiX } from 'react-icons/hi'
 
@@ -54,7 +53,6 @@ const Button = (props) => (
 )
 
 export default function Contact(params) {
-  const [send, setSend] = useState(false)
   const formik = useFormik({
     initialValues: {
       fullName: '',
@@ -67,6 +65,12 @@ export default function Contact(params) {
       email: Yup.string().email('Invalid email address').required('Required'),
     }),
     onSubmit: (values, { resetForm }) => {
+      // notify()
+      // Swal.fire({
+      //   icon: 'error',
+      //   title: 'Ooops, something went wrong',
+      //   text: 'error.text', eP
+      // })
       toast.promise(
         emailjs
           .send(
@@ -77,7 +81,7 @@ export default function Contact(params) {
           )
           .then(
             function (response) {
-              // console.log('SUCCESS!', response.status, response.text)
+              console.log('SUCCESS!', response.status, response.text)
               resetForm()
             },
             function (error) {
