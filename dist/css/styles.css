@@ -1,0 +1,29 @@
+.Footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 50px 0;
+}
+
+.Footer .social-links a,
+.Footer .social-links a:visited {
+  color: var(--text-color);
+  margin: 0 5px;
+  -webkit-transition: background-color 170ms ease-in-out;
+  transition: background-color 170ms ease-in-out;
+}
+
+.Footer .social-links:hover {
+  color: var(--hoverColor);
+}
+
+.Footer .social-links:hover a:not(:hover) {
+  color: #8a8a8a;
+}

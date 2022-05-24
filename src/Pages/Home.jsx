@@ -1,11 +1,10 @@
-import GridContainer from '../components/GridContainer/GridContainer'
-import { data } from '../data'
-const Home = () => {
+import GridContainer from '../components/GridContainer/GridContainer';
+const Home = ({ data }) => {
   return (
     <div>
       <GridContainer data={data} />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

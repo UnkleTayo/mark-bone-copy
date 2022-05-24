@@ -1,16 +1,17 @@
-@import '../../styles/breakpoints.scss';
-@import '../../styles/variables.scss';
+@import "../../styles/breakpoints.scss";
+@import "../../styles/variables.scss";
 
 .Grid-Container {
   margin: 10px 0;
 
   display: grid;
   grid-gap: 5px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fit, 230px);
-  grid-auto-flow: row dense;
+  // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  // grid-template-rows: repeat(auto-fit, 300px);
+  // grid-auto-flow: row dense;
 
-  @include media('<=tablet') {
+  @include media("<=tablet") {
     // grid-template-rows: repeat(auto-fit, 230px);
     grid-template-columns: repeat(2, 1fr);
   }

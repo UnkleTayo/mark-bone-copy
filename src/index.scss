@@ -1,34 +1,34 @@
-@import './styles/variables.scss';
+@import "./styles/variables.scss";
 
-@font-face {
-  font-family: 'AvenirLTStd';
-  src: local('AvenirLTStd'),
-    url('./assets/fonts/AvenirLTStd-Book.otf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
-}
+// @font-face {
+//   font-family: 'AvenirLTStd';
+//   src: local('AvenirLTStd'),
+//     url('./assets/fonts/AvenirLTStd-Book.otf') format('truetype');
+//   font-style: normal;
+//   font-weight: 400;
+// }
 
-@font-face {
-  font-family: 'Lato';
-  src: local('Lato'), url('./assets/fonts/Lato-Regular.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
-}
+// @font-face {
+//   font-family: 'Lato';
+//   src: local('Lato'), url('./assets/fonts/Lato-Regular.ttf') format('truetype');
+//   font-style: normal;
+//   font-weight: 400;
+// }
 
-@font-face {
-  font-family: 'AvenirLTStd';
-  src: local('AvenirLTStd'),
-    url('./assets/fonts/AvenirLTStd-Black.otf') format('truetype');
-  font-weight: bold;
-}
+// @font-face {
+//   font-family: 'AvenirLTStd';
+//   src: local('AvenirLTStd'),
+//     url('./assets/fonts/AvenirLTStd-Black.otf') format('truetype');
+//   font-weight: bold;
+// }
 
-@font-face {
-  font-family: 'SpecialElite';
-  src: local('SpecialElite'),
-    url('./assets/fonts/SpecialElite-Regular.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
-}
+// @font-face {
+//   font-family: 'SpecialElite';
+//   src: local('SpecialElite'),
+//     url('./assets/fonts/SpecialElite-Regular.ttf') format('truetype');
+//   font-style: normal;
+//   font-weight: 400;
+// }
 
 :root {
   --background-color: #fff;
@@ -36,7 +36,7 @@
   --link-color: #543fd7;
 }
 
-body[data-theme='light'] {
+body[data-theme="light"] {
   --background-color: #fff;
   --text-color: #000;
   --hover-color: rgba(158, 158, 158, 0.7);
@@ -47,7 +47,7 @@ body[data-theme='light'] {
   --form-text: #fff;
 }
 
-body[data-theme='dark'] {
+body[data-theme="dark"] {
   --background-color: #000;
   --text-color: #fff;
   --link-color: rgba(158, 158, 158, 0.7);
@@ -57,14 +57,13 @@ body[data-theme='dark'] {
 }
 
 body {
-  font-family: 'SpecialElite', sans-serif;
+  font-family: "SpecialElite", sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .player-wrapper {

@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import './style.scss'
+import './style.scss';
 
 const Header = () => {
-  const [showMenu, setShowMenu] = useState(false)
-  const [showMobileNav, setShowMobileNav] = useState(false)
+  const [showMenu, setShowMenu] = useState(false);
+  const [showMobileNav, setShowMobileNav] = useState(false);
 
   return (
     <div className="header">
@@ -57,7 +57,10 @@ const Header = () => {
                     <Link to="/about">About</Link>
                   </li>
                   <li className="page-collection">
-                    <Link to="/contact">Contact Me</Link>
+                    <Link to="/pricing">Pricing</Link>
+                  </li>
+                  <li className="page-collection">
+                    <Link to="/contact">Contact</Link>
                   </li>
                 </ul>
               </nav>
@@ -119,13 +122,16 @@ const Header = () => {
               <Link to="/about">About</Link>
             </li>
             <li className="page-collection">
-              <Link to="/contact">Contact Me</Link>
+              <Link to="/pricing">Pricing</Link>
+            </li>
+            <li className="page-collection">
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </nav>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

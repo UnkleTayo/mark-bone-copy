@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'AvenirLTStd';
+  src: local("AvenirLTStd"), url("./assets/fonts/AvenirLTStd-Book.otf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato"), url("./assets/fonts/Lato-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'AvenirLTStd';
+  src: local("AvenirLTStd"), url("./assets/fonts/AvenirLTStd-Black.otf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'SpecialElite';
+  src: local("SpecialElite"), url("./assets/fonts/SpecialElite-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --background-color: #fff;
+  --text-color: #121416d8;
+  --link-color: #543fd7;
+}
+
+body[data-theme='light'] {
+  --background-color: #fff;
+  --text-color: #000;
+  --hover-color: rgba(158, 158, 158, 0.7);
+  --subNav-color: #000;
+  --link-color: rgba(158, 158, 158, 0.7);
+  --prevColor: var(--link-color);
+  --form-bg: #000;
+  --form-text: #fff;
+}
+
+body[data-theme='dark'] {
+  --background-color: #000;
+  --text-color: #fff;
+  --link-color: rgba(158, 158, 158, 0.7);
+  --subNav-color: #000;
+  --hover-color: rgba(158, 158, 158, 0.7);
+  --prevColor: var(--link-color);
+}
+
+body {
+  font-family: 'SpecialElite', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.player-wrapper {
+  width: auto;
+  height: auto;
+}
+
+.react-player {
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.react-player > div {
+  position: absolute;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  /* 720 / 1280 = 0.5625 */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

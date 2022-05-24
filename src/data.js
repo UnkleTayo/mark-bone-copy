@@ -1,25 +1,25 @@
-import Img1 from './assets/images/uncle-steven .png'
-import Img3 from './assets/images/disability.png'
-import Img4 from './assets/images/rickety.png'
-import Img5 from './assets/images/Knor.png'
-import Img6 from './assets/images/zuta.png'
-import Img7 from './assets/images/sour-grape.png'
-import Img8 from './assets/images/screenshot.png'
-import Img9 from './assets/images/Syngenta.png'
-import Img10 from './assets/images/SHOWREEL.png'
-import Img11 from './assets/images/dear-kame.png'
-import Img12 from './assets/images/stargrips.png'
+import Img1 from './assets/images/uncle-steven .png';
+import Img3 from './assets/images/disability.png';
+import Img4 from './assets/images/rickety.png';
+import Img5 from './assets/images/Knor.png';
+import Img6 from './assets/images/zuta.png';
+import Img7 from './assets/images/sour-grape.png';
+import Img8 from './assets/images/screenshot.png';
+import Img9 from './assets/images/Syngenta.png';
+import Img10 from './assets/images/SHOWREEL.png';
+import Img11 from './assets/images/dear-kame.png';
+import Img12 from './assets/images/stargrips.png';
 
-import Bw1 from './assets/images/Snapseed 15.jpg'
-import Bw2 from './assets/images/Snapseed 10.jpg'
-import Bw3 from './assets/images/baby.JPG'
-import Bw4 from './assets/images/berger.png'
-import Bw5 from './assets/images/door.jpg'
-import Bw6 from './assets/images/Snapseed 12.jpg'
-import Bw7 from './assets/images/FullSizeRender.jpg'
-import Bw8 from './assets/images/airplane-window.png'
+import Bw1 from './assets/images/Snapseed 15.jpg';
+import Bw2 from './assets/images/Snapseed 10.jpg';
+import Bw3 from './assets/images/baby.JPG';
+import Bw4 from './assets/images/berger.png';
+import Bw5 from './assets/images/door.jpg';
+import Bw6 from './assets/images/Snapseed 12.jpg';
+import Bw7 from './assets/images/FullSizeRender.jpg';
+import Bw8 from './assets/images/airplane-window.png';
 
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from 'uuid';
 
 export const data = [
   {
@@ -222,6 +222,6 @@ Dear Kame is a short story that centers around love, loss, and grief.`,
     ],
     videoUrl: 'https://youtu.be/vIY9s7BeIQA',
   },
-]
+];
 
-export const bnw = [Bw1, Bw2, Bw3, Bw4, Bw5, Bw6, Bw7, Bw8]
+export const bnw = [Bw1, Bw2, Bw3, Bw4, Bw5, Bw6, Bw7, Bw8];
