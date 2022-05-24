@@ -6,7 +6,7 @@ import ReactPlayer from 'react-player';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { useHistory } from 'react-router';
 import GridContainer from '../components/GridContainer/GridContainer';
-import { data } from '../data';
+// import { data } from '../data';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { SINGLE_PROJECT } from '../utils/queries';

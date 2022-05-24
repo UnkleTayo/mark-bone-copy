@@ -1,15 +1,15 @@
 import FlexContainer from '../components/FlexContainer/FlexContainer';
-import EzicImage from '../assets/images/Bio.png';
+// import EzicImage from '../assets/images/Bio.png';
 import { MyImage } from '../components/LazyImage';
 import { ABOUT } from '../utils/queries';
 import { useQuery } from '@apollo/client';
 import { sanitizedData } from './Stills';
 import { buildImage } from '../utils/cloudinary';
 
-const ImageProp = {
-  thumbnail: EzicImage,
-  title: 'ezekiah-akande',
-};
+// const ImageProp = {
+//   thumbnail: EzicImage,
+//   title: 'ezekiah-akande',
+// };
 
 const About = () => {
   const { loading, error, data } = useQuery(ABOUT);

@@ -11,7 +11,7 @@ import About from './Pages/About';
 import BlackWhite from './Pages/BlackWhite';
 import Home from './Pages/Home';
 import Stills from './Pages/Stills';
-import { data as oldData } from './data';
+// import { data as oldData } from './data';
 import MotionDesign from './Pages/MotionDesign';
 import PageNotFound from './Pages/404-page';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -21,51 +21,50 @@ import { PROJECT_QUERY } from './utils/queries';
 
 function App() {
   // const [themeState, setThemeState] = useState(false);
-  // const { loading, error, data } = useQuery(PROJECT_QUERY);
-  const { loading, error, data } = useQuery(PROJECT_QUERY);
+  const { data } = useQuery(PROJECT_QUERY);
 
-  // useEffect(() => {
-  //   if (data) {
-  //     window.localStorage.setItem(
-  //       'EZIC-projects',
-  //       JSON.stringify(data.projects)
-  //     );
-  //   }
-  // });
+  useEffect(() => {
+    if (data) {
+      window.localStorage.setItem(
+        'EZIC-projects',
+        JSON.stringify(data.projects)
+      );
+    }
+  });
 
-  // useEffect(() => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: 'smooth',
-  //   });
-  // }, []);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
 
-  // useEffect(() => {
-  //   setThemePreference();
-  // });
+  useEffect(() => {
+    setThemePreference();
+  });
 
-  // function setThemePreference() {
-  //   var d = new Date();
-  //   /*
-  //    * The getHours() method returns the hour (from 0 to 23) of the specified date and time.
-  //    * Day = 0 - 11
-  //    * Night = 12 - 23
-  //    */
-  //   var currentHour = d.getHours();
+  function setThemePreference() {
+    var d = new Date();
+    /*
+     * The getHours() method returns the hour (from 0 to 23) of the specified date and time.
+     * Day = 0 - 11
+     * Night = 12 - 23
+     */
+    var currentHour = d.getHours();
 
-  //   /*
-  //    * The dark theme load early morning and night
-  //    * The light theme load morning and evening
-  //    */
+    /*
+     * The dark theme load early morning and night
+     * The light theme load morning and evening
+     */
 
-  //   if (currentHour >= 19 || currentHour <= 6) {
-  //     document.body.setAttribute('data-theme', 'dark');
-  //     document.documentElement.setAttribute('data-theme', 'dark');
-  //   } else {
-  //     document.body.setAttribute('data-theme', 'light');
-  //     document.documentElement.setAttribute('data-theme', 'light');
-  //   }
-  // }
+    if (currentHour >= 19 || currentHour <= 6) {
+      document.body.setAttribute('data-theme', 'dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.body.setAttribute('data-theme', 'light');
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  }
   return (
     <AnimatePresence exitBeforeEnter>
       <motion.div

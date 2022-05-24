@@ -1,4 +1,4 @@
-import { bnw } from '../data';
+// import { bnw } from '../data';
 import { motion } from 'framer-motion';
 import { BlACk_AND_WHITE } from '../utils/queries';
 import { useQuery } from '@apollo/client';
