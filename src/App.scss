@@ -1,19 +1,25 @@
-@import './styles/breakpoints.scss';
-@import './styles/variables.scss';
-
+@import "./styles/reset";
+@import "./styles/breakpoints.scss";
+@import "./styles/variables.scss";
 .App {
   position: relative;
   @media only screen and (min-width: 750px) {
-    margin: 0 25px;
+    padding: 0 25px;
   }
 
   .page-divider {
     border-bottom: 1px solid $hoveColor;
 
     &.home {
-      margin: 15px 0;
+      border-top: 1px solid $hoveColor;
     }
   }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .About {
@@ -36,7 +42,7 @@
     h1 {
       white-space: pre-wrap;
       color: $white;
-      font-family: 'SpecialElite', sans-serif;
+      font-family: "SpecialElite", sans-serif;
       font-weight: 400;
       font-style: normal;
       line-height: 0.9em;
@@ -52,7 +58,7 @@
     }
 
     p {
-      font-family: 'SpecialElite', sans-serif;
+      font-family: "SpecialElite", sans-serif;
       font-weight: 400;
       font-style: normal;
       line-height: 1.3em;
@@ -79,7 +85,7 @@
     padding: 16px;
   }
   h1 {
-    font-family: 'SpecialElite', sans-serif;
+    font-family: "SpecialElite", sans-serif;
     font-weight: 300;
     font-style: normal;
     line-height: 1.3em;
@@ -89,7 +95,7 @@
     letter-spacing: 1px;
     text-align: center;
 
-    @include media('<=tablet') {
+    @include media("<=tablet") {
       font-size: 5vw;
     }
   }
@@ -102,7 +108,7 @@
     }
 
     .image-meta {
-      font-family: 'SpecialElite', sans-serif;
+      font-family: "SpecialElite", sans-serif;
       font-style: normal;
       line-height: 1.3em;
       font-size: 19px;
@@ -214,7 +220,7 @@
     height: 100%;
     width: 50%;
 
-    @include media('<=500px') {
+    @include media("<=500px") {
       width: 80%;
     }
     img {
@@ -320,5 +326,78 @@
     textarea.input-focus {
       @include input-focus;
     }
+  }
+}
+
+.Pricing {
+  text-align: center;
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include media("<=phone") {
+      flex-direction: column;
+    }
+  }
+
+  &-card {
+    text-align: center;
+    padding: 20px 40px;
+    margin: 40px;
+  }
+
+  &-title {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    color: gray;
+    text-align: center;
+    display: inline-block;
+  }
+
+  &-subtitle {
+    color: lighten(#000, 10%);
+    font-style: italic;
+  }
+
+  .btn {
+    border: none;
+    background-color: #000;
+    padding: 20px 25px;
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s ease-out;
+
+      &:hover {
+        color: lighten(#000, 60%);
+      }
+    }
+  }
+}
+
+.Videos {
+  padding: 30px;
+  margin: 20px 10%;
+
+  @include media("<=phone") {
+    margin: 20px 10%;
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    @include media("<=phone") {
+      display: block;
+    }
+  }
+
+  &-player {
+    position: relative;
+    width: 350px;
+    height: 250px;
   }
 }

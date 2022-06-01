@@ -98,11 +98,11 @@ const Header = () => {
                   <li className="blog-collection">
                     <Link to="/black-white">BLACK &amp; WHITE</Link>
                   </li>
-                  {/* 
-                  <li className="blog-collection">
-                    <Link to="/commercial">COMMERCIAL</Link>
-                  </li>
 
+                  <li className="blog-collection">
+                    <Link to="/videos">Videos</Link>
+                  </li>
+                  {/* 
                   <li className="blog-collection">
                     <Link to="/35mm">35MM/PORTRAIT</Link>
                   </li> */}

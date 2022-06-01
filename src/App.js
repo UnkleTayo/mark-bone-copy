@@ -18,6 +18,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Contact from './Pages/Contact';
 import Pricing from './Pages/Pricing';
 import { PROJECT_QUERY } from './utils/queries';
+import Videos from './Pages/Videos';
 
 function App() {
   // const [themeState, setThemeState] = useState(false);
@@ -73,8 +74,10 @@ function App() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <Header />
-        <div className="page-divider home"></div>
+        <div style={{ width: '80%' }}>
+          <Header />
+          <div className="page-divider home"></div>
+        </div>
         <Switch>
           <Route path="/about">
             <About />
@@ -91,6 +94,9 @@ function App() {
           <Route path="/contact">
             <Contact />
           </Route>
+          <Route path="/videos">
+            <Videos />
+          </Route>
           <Route exact path="/">
             <PreLoader />
             <Home data={data} />
@@ -102,8 +108,11 @@ function App() {
             <PageNotFound />
           </Route>
         </Switch>
-        <div className="page-divider home"></div>
-        <Footer />
+
+        <div style={{ width: '80%' }}>
+          <div className="page-divider home"></div>
+          <Footer />
+        </div>
       </motion.div>
     </AnimatePresence>
   );
