@@ -61,3 +61,13 @@ export const ABOUT = gql`
     }
   }
 `;
+
+export const BlACk_AND_WHITE_VIDEOS = gql`
+  query BlackAndWhite {
+    blackAndWhiteVideos {
+      name
+      id
+      videoUrl
+    }
+  }
+`;

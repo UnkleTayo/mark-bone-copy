@@ -37,6 +37,9 @@ const Header = () => {
                           <li className="blog-collection">
                             <Link to="/black-white">BLACK &amp; WHITE</Link>
                           </li>
+                          {/* <li className="blog-collection">
+                            <Link to="/videos">Videos</Link>
+                          </li> */}
                           <li className="blog-collection">
                             <a
                               target="_blank"
@@ -49,6 +52,9 @@ const Header = () => {
                         </ul>
                       </motion.div>
                     )}
+                  </li>
+                  <li className="page-collection">
+                    <Link to="/videos">Wedding Videos</Link>
                   </li>
                   <li className="page-collection">
                     <Link to="/motion-design">Motion Design</Link>
@@ -114,6 +120,9 @@ const Header = () => {
                   </li>
                 </ul>
               </div>
+            </li>
+            <li className="page-collection">
+              <Link to="/videos">Wedding Videos</Link>
             </li>
             <li className="page-collection">
               <Link to="/motion-design">Motion Design</Link>
