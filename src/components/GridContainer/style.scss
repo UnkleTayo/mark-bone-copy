@@ -2,17 +2,12 @@
 @import "../../styles/variables.scss";
 
 .Grid-Container {
-  margin: 10px 0;
-
   display: grid;
-  grid-gap: 5px;
-  // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 15px;
   grid-template-columns: repeat(3, 1fr);
-  // grid-template-rows: repeat(auto-fit, 300px);
-  // grid-auto-flow: row dense;
-
+  grid-auto-flow: row;
   @include media("<=tablet") {
-    // grid-template-rows: repeat(auto-fit, 230px);
     grid-template-columns: repeat(2, 1fr);
+    margin: 0 5%;
   }
 }

@@ -20,6 +20,29 @@ import Pricing from './Pages/Pricing';
 import { PROJECT_QUERY } from './utils/queries';
 import Videos from './Pages/Videos';
 
+function setThemePreference() {
+  var d = new Date();
+  /*
+   * The getHours() method returns the hour (from 0 to 23) of the specified date and time.
+   * Day = 0 - 11
+   * Night = 12 - 23
+   */
+  var currentHour = d.getHours();
+
+  /*
+   * The dark theme load early morning and night
+   * The light theme load morning and evening
+   */
+
+  if (currentHour >= 19 || currentHour <= 6) {
+    document.body.setAttribute('data-theme', 'dark');
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.body.setAttribute('data-theme', 'light');
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+}
+
 function App() {
   // const [themeState, setThemeState] = useState(false);
   const { data } = useQuery(PROJECT_QUERY);
@@ -40,32 +63,10 @@ function App() {
     });
   }, []);
 
-  useEffect(() => {
-    setThemePreference();
-  });
+  // useEffect(() => {
+  //   setThemePreference();
+  // });
 
-  function setThemePreference() {
-    var d = new Date();
-    /*
-     * The getHours() method returns the hour (from 0 to 23) of the specified date and time.
-     * Day = 0 - 11
-     * Night = 12 - 23
-     */
-    var currentHour = d.getHours();
-
-    /*
-     * The dark theme load early morning and night
-     * The light theme load morning and evening
-     */
-
-    if (currentHour >= 19 || currentHour <= 6) {
-      document.body.setAttribute('data-theme', 'dark');
-      document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-      document.body.setAttribute('data-theme', 'light');
-      document.documentElement.setAttribute('data-theme', 'light');
-    }
-  }
   return (
     <AnimatePresence exitBeforeEnter>
       <motion.div
@@ -74,44 +75,44 @@ function App() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <div style={{ width: '80%' }}>
+        <div>
           <Header />
-          <div className="page-divider home"></div>
         </div>
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/motion-design">
-            <MotionDesign />
-          </Route>
-          <Route path="/black-white">
-            <BlackWhite />
-          </Route>
-          <Route path="/pricing">
-            <Pricing />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/videos">
-            <Videos />
-          </Route>
-          <Route exact path="/">
-            <PreLoader />
-            <Home data={data} />
-          </Route>
-          <Route exact path="/projects/:slug">
-            <Stills />
-          </Route>
-          <Route path="*">
-            <PageNotFound />
-          </Route>
-        </Switch>
+        <div className="page-divider">
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/motion-design">
+              <MotionDesign />
+            </Route>
+            <Route path="/black-white">
+              <BlackWhite />
+            </Route>
+            <Route path="/pricing">
+              <Pricing />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/videos">
+              <Videos />
+            </Route>
+            <Route exact path="/">
+              <PreLoader />
+              <Home data={data} />
+            </Route>
+            <Route exact path="/projects/:slug">
+              <Stills />
+            </Route>
+            <Route path="*">
+              <PageNotFound />
+            </Route>
+          </Switch>
 
-        <div style={{ width: '80%' }}>
-          <div className="page-divider home"></div>
-          <Footer />
+          <div>
+            <Footer />
+          </div>
         </div>
       </motion.div>
     </AnimatePresence>

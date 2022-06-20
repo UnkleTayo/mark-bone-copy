@@ -10,6 +10,7 @@ import GridContainer from '../components/GridContainer/GridContainer';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { SINGLE_PROJECT } from '../utils/queries';
+import CustomPlayer from '../components/VideoPlayer/VideoPlayer';
 
 export const sanitizedData = (data) => ({
   __html: DOMPurify.sanitize(data),
@@ -105,9 +106,10 @@ const Stills = () => {
             <h1>{pageData?.name}</h1>
             <div className="still-image">
               {/* <img src={pageData.thumbnail} alt={pageData.name} /> */}
+
               <ReactPlayer
                 width={`100%`}
-                height={isPageWide ? '500px' : '350px'}
+                height={isPageWide ? '700px' : '350px'}
                 url={pageData?.videoUrl}
               />
               <div className="stills-navigation">

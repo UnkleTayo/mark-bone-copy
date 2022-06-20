@@ -7,13 +7,13 @@
     padding: 0 25px;
   }
 
-  .page-divider {
-    border-bottom: 1px solid $hoveColor;
+  // .page-divider {
+  //   border-bottom: 1px thin $hoveColor;
 
-    &.home {
-      border-top: 1px solid $hoveColor;
-    }
-  }
+  //   &.home {
+  //     border-top: 1px thin $hoveColor;
+  //   }
+  // }
 
   display: flex;
   flex-direction: column;
@@ -177,9 +177,16 @@
 }
 
 .Motions {
-  text-align: center;
+  margin: 0 auto;
+  margin: 1rem 0;
   .motion {
-    margin: 1rem 0;
+    margin: 40px auto;
+    display: grid;
+    place-content: center;
+    @include media("<=tablet") {
+      grid-template-columns: repeat(2, 1fr);
+      // margin: 0 5%;
+    }
   }
 }
 
@@ -257,9 +264,9 @@
     color: $primary;
   }
 
-  .form {
-    // padding: 0.5rem 0;
-  }
+  // .form {
+  //   // padding: 0.5rem 0;
+  // }
 
   .button {
     display: block;
@@ -344,6 +351,10 @@
     text-align: center;
     padding: 20px 40px;
     margin: 40px;
+
+    div {
+      padding-top: 40px;
+    }
   }
 
   &-title {
@@ -362,16 +373,18 @@
   .btn {
     border: none;
     background-color: #000;
-    padding: 20px 25px;
+    padding: 10px 25px;
+    transition: color 0.2s ease;
+
+    &:hover {
+      a {
+        color: lighten(#000, 60%);
+      }
+    }
     a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.2s ease-out;
-
-      &:hover {
-        color: lighten(#000, 60%);
-      }
     }
   }
 }
@@ -400,4 +413,12 @@
     width: 350px;
     height: 250px;
   }
+}
+
+.page-divider {
+  width: 100vw;
+  padding: 30px 0;
+  margin: 0 10%;
+  border-top: 1px solid $hoveColor;
+  border-bottom: 1px solid $hoveColor;
 }

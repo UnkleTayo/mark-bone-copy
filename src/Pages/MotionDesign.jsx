@@ -1,54 +1,27 @@
-import React from 'react'
-import ReactPlayer from 'react-player'
+import React from 'react';
+import ReactPlayer from 'react-player';
+import { useMediaQuery } from '../hooks/useMediaQuery';
+
+const videoLinks = [
+  'https://youtu.be/cVGDoQuRpao',
+  'https://vimeo.com/646164198',
+  'https://youtu.be/vIY9s7BeIQA',
+  'https://vimeo.com/649881148',
+  'https://youtu.be/cVGDoQuRpao',
+];
 
 const MotionDesign = () => {
+  const isPageWide = useMediaQuery('(min-width: 768px)');
+
   return (
     <div className="Motions">
-      <div className="motion">
-        <ReactPlayer
-          width={`100%`}
-          height={`500px`}
-          url={`https://youtu.be/cVGDoQuRpao`}
-        />
-      </div>
-      <div className="motion">
-        <ReactPlayer
-          width={`100%`}
-          height={`500px`}
-          url={`https://vimeo.com/646164198`}
-        />
-      </div>
-      <div className="motion">
-        <ReactPlayer
-          width={`100%`}
-          height={`500px`}
-          url={`https://youtu.be/vIY9s7BeIQA`}
-        />
-      </div>
-      <div className="motion">
-        <ReactPlayer
-          width={`100%`}
-          height={`500px`}
-          url={`https://vimeo.com/649881148`}
-        />
-      </div>
-
-      {/* <div className="motion">
-        <ReactPlayer
-          width={`100%`}
-          height={`500px`}
-          url={`https://youtu.be/cVGDoQuRpao`}
-        />
-      </div>{' '} */}
-      {/* <div className="motion">
-        <ReactPlayer
-          width={`100%`}
-          height={`500px`}
-          url={`https://youtu.be/cVGDoQuRpao`}
-        />
-      </div> */}
+      {videoLinks.map((link) => (
+        <div key={link} className="motion">
+          <ReactPlayer url={link} />
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default MotionDesign
+export default MotionDesign;

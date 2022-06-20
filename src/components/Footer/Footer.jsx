@@ -1,5 +1,5 @@
-import { FaInstagram, FaVimeo, FaYoutube } from 'react-icons/fa'
-import './styles.scss'
+import { FaInstagram, FaVimeo, FaYoutube } from 'react-icons/fa';
+import './styles.scss';
 
 const Footer = () => {
   return (
@@ -10,25 +10,25 @@ const Footer = () => {
           rel="noreferrer"
           href="https://vimeo.com/ezicfilmworks"
         >
-          <FaVimeo />
+          <FaVimeo size={24} />
         </a>
         <a
           target="_blank"
           rel="noreferrer"
           href="https://www.instagram.com/ezicfilmworks"
         >
-          <FaInstagram />
+          <FaInstagram size={24} />
         </a>{' '}
         <a
           target="_blank"
           rel="noreferrer"
           href="https://youtube.com/c/EzekiahAkande"
         >
-          <FaYoutube />
+          <FaYoutube size={24} />
         </a>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
