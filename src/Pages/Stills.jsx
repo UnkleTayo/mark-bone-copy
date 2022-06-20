@@ -10,7 +10,6 @@ import GridContainer from '../components/GridContainer/GridContainer';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { SINGLE_PROJECT } from '../utils/queries';
-import CustomPlayer from '../components/VideoPlayer/VideoPlayer';
 
 export const sanitizedData = (data) => ({
   __html: DOMPurify.sanitize(data),

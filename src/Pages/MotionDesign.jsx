@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import { useMediaQuery } from '../hooks/useMediaQuery';
 
 const videoLinks = [
   'https://youtu.be/cVGDoQuRpao',
@@ -11,8 +10,6 @@ const videoLinks = [
 ];
 
 const MotionDesign = () => {
-  const isPageWide = useMediaQuery('(min-width: 768px)');
-
   return (
     <div className="Motions">
       {videoLinks.map((link) => (
