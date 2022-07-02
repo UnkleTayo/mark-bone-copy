@@ -54,7 +54,7 @@ const Header = () => {
                     )}
                   </li>
                   <li className="page-collection">
-                    <Link to="/videos">Wedding Videos</Link>
+                    <Link to="/videos">Wedding Films</Link>
                   </li>
                   <li className="page-collection">
                     <Link to="/motion-design">Motion Design</Link>
@@ -65,9 +65,9 @@ const Header = () => {
                   <li className="page-collection">
                     <Link to="/pricing">Pricing</Link>
                   </li>
-                  <li className="page-collection">
+                  {/* <li className="page-collection">
                     <Link to="/contact">Contact</Link>
-                  </li>
+                  </li> */}
                 </ul>
               </nav>
             </div>
@@ -122,7 +122,7 @@ const Header = () => {
               </div>
             </li>
             <li className="page-collection">
-              <Link to="/videos">Wedding Videos</Link>
+              <Link to="/videos">Wedding Films</Link>
             </li>
             <li className="page-collection">
               <Link to="/motion-design">Motion Design</Link>
@@ -133,9 +133,9 @@ const Header = () => {
             <li className="page-collection">
               <Link to="/pricing">Pricing</Link>
             </li>
-            <li className="page-collection">
+            {/* <li className="page-collection">
               <Link to="/contact">Contact</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>

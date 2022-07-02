@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { BlACk_AND_WHITE } from '../utils/queries';
 import { useQuery } from '@apollo/client';
 import { buildImage } from '../utils/cloudinary';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // import LazyLoad from 'react-lazy-load'
 const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
@@ -17,15 +18,14 @@ const BlackWhite = () => {
     <div className="BlackWhite">
       {data?.stills.map((data) => (
         <div key={data?.id} className="image-container">
-          <motion.img
-            whileHover={{ scale: 0.95 }}
-            transition={transition}
-            src={buildImage(data?.image?.public_id).toURL()}
-            alt={data?.name}
-            loading="lazy"
-            width="100%"
-            height="100%"
-          />
+          <motion.div whileHover={{ scale: 0.95 }} transition={transition}>
+            <LazyLoadImage
+              alt={data?.name}
+              effect="blur"
+              loading="lazy"
+              src={buildImage(data?.image?.public_id).toURL()}
+            />
+          </motion.div>
         </div>
       ))}
     </div>

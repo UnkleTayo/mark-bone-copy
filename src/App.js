@@ -78,42 +78,39 @@ function App() {
         <div>
           <Header />
         </div>
-        <div className="page-divider">
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/motion-design">
-              <MotionDesign />
-            </Route>
-            <Route path="/black-white">
-              <BlackWhite />
-            </Route>
-            <Route path="/pricing">
-              <Pricing />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/videos">
-              <Videos />
-            </Route>
-            <Route exact path="/">
-              <PreLoader />
-              <Home data={data} />
-            </Route>
-            <Route exact path="/projects/:slug">
-              <Stills />
-            </Route>
-            <Route path="*">
-              <PageNotFound />
-            </Route>
-          </Switch>
+        <div className="page-divider"></div>
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/motion-design">
+            <MotionDesign />
+          </Route>
+          <Route path="/black-white">
+            <BlackWhite />
+          </Route>
+          <Route path="/pricing">
+            <Pricing />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/videos">
+            <Videos />
+          </Route>
+          <Route exact path="/">
+            <PreLoader />
+            <Home data={data} />
+          </Route>
+          <Route exact path="/projects/:slug">
+            <Stills />
+          </Route>
+          <Route path="*">
+            <PageNotFound />
+          </Route>
+        </Switch>
 
-          <div>
-            <Footer />
-          </div>
-        </div>
+        <Footer />
       </motion.div>
     </AnimatePresence>
   );

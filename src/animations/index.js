@@ -1,8 +1,8 @@
-import gsap from 'gsap'
+import gsap from 'gsap';
 
 // Declare a general timeline to use in all the animation functions.
 
-const tl = gsap.timeline()
+const tl = gsap.timeline({ defaults: { ease: 'power1.out' } });
 
 // Preloader Animation
 export const preLoaderAnim = () => {
@@ -11,14 +11,43 @@ export const preLoaderAnim = () => {
     css: { overflowY: 'hidden' },
     ease: 'power3.inOut',
   })
-    .to('.Home', {
-      duration: 0.05,
-      css: { overflowY: 'hidden', height: '90vh' },
-    })
-    .to('.texts-container', {
-      duration: 0,
+    .to(
+      '.preloader',
+      {
+        x: 0,
+        duration: 0.05,
+        css: { overflowY: 'hidden', y: 0, opacity: 1, zIndex: 5 },
+      },
+      '-=1'
+    )
+    .to(
+      '.first-slider',
+      {
+        x: '-5%',
+        duration: 1.5,
+      },
+      '-=1'
+    )
+    .to(
+      '.white-slider',
+      {
+        x: '-10%',
+        duration: 1.5,
+      },
+      '-=1'
+    )
+    .to(
+      '.texts-container',
+      {
+        opacity: 1,
+        ease: 'Power3.easeOut',
+      },
+      '-=1'
+    )
+    .to('.hide', {
+      x: '0%',
+      duration: 2,
       opacity: 1,
-      ease: 'Power3.easeOut',
     })
     .from('.texts-container span', {
       duration: 1.5,
@@ -47,14 +76,13 @@ export const preLoaderAnim = () => {
       ease: 'power3.inOut',
     })
     .to('.preloader', {
-      duration: 0,
-      css: { display: 'none' },
-      ease: 'expo.easeOut',
-    })
-}
+      x: '200%',
+      duration: 3,
+    });
+};
 
 export const openMenu = () => {
-  const tl = gsap.timeline()
+  const tl = gsap.timeline();
   tl.to('body', {
     duration: 0.1,
     css: { overflowY: 'hidden' },
@@ -98,17 +126,17 @@ export const openMenu = () => {
         ease: 'Power3.in',
       },
       '-=.3'
-    )
+    );
 
   // change cursor color when nav is open
   // tl.to(".cursor", {
   //   delay: -1,
   //   css: { className: "+=cursor-active" },
   // }).to(".cursor2", { delay: -1, css: { className: "+=cursor2-active" } });
-}
+};
 
 export const closeMenu = () => {
-  const tl = gsap.timeline()
+  const tl = gsap.timeline();
   tl.to('body', {
     duration: 0.05,
     css: { overflowY: 'scroll' },
@@ -135,12 +163,12 @@ export const closeMenu = () => {
     .to('.hamburger-menu', {
       duration: 0.05,
       css: { display: 'none' },
-    })
+    });
 
   // tl.to(".cursor-active", {
   //   css: { className: "+=cursor" },
   // }).to(".cursor2-active", { css: { className: "+=cursor2" } });
-}
+};
 
 // recurrent animations
 export const fadeUp = (el, delay = 0) => {
@@ -150,8 +178,8 @@ export const fadeUp = (el, delay = 0) => {
     delay,
     opacity: 0,
     ease: 'power3.Out',
-  })
-}
+  });
+};
 
 export const mobileLanding = () => {
   window.innerWidth < 763 &&
@@ -161,8 +189,8 @@ export const mobileLanding = () => {
       opacity: 0,
       y: 80,
       ease: 'expo.easeOut',
-    })
-}
+    });
+};
 
 // const animateShapes = () => {
 //   const infiniteTl = gsap.timeline({
@@ -229,7 +257,7 @@ export const mobileLanding = () => {
 // }
 
 export const boxHover = (e) => {
-  const tl = gsap.timeline()
+  const tl = gsap.timeline();
   window.innerWidth >= 986 &&
     tl
       .to(e.target.querySelector('.link'), {
@@ -242,16 +270,16 @@ export const boxHover = (e) => {
         y: 30,
         stagger: 0.1,
         ease: 'Power3.easeOut',
-      })
-}
+      });
+};
 
 export const boxExit = (e) => {
   window.innerWidth >= 986 &&
     gsap.to(e.target.querySelector('.link'), {
       duration: 0,
       opacity: 0,
-    })
-}
+    });
+};
 
 export const fadeIn = (el) => {
   gsap.to(el, {
@@ -259,8 +287,8 @@ export const fadeIn = (el) => {
     opacity: 1,
     y: -60,
     ease: 'power4.out',
-  })
-}
+  });
+};
 
 export const fadeOut = (el) => {
   gsap.to(el, {
@@ -268,5 +296,5 @@ export const fadeOut = (el) => {
     opacity: 0,
     y: -20,
     ease: 'power4.out',
-  })
-}
+  });
+};

@@ -1,19 +1,19 @@
-import React from 'react'
-import { useFormik } from 'formik'
-import * as Yup from 'yup'
-import emailjs from 'emailjs-com'
-import { toast, ToastBar, Toaster } from 'react-hot-toast'
-import { HiX } from 'react-icons/hi'
+import React, { useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import emailjs from 'emailjs-com';
+import { toast, ToastBar, Toaster } from 'react-hot-toast';
+import { HiX } from 'react-icons/hi';
 
 /** Components */
 
-const Card = (props) => <div className="card">{props.children}</div>
+const Card = (props) => <div className="card">{props.children}</div>;
 
 const Form = (props) => (
   <form onSubmit={props.onSubmit} className="form">
     {props.children}
   </form>
-)
+);
 
 const TextInput = (props) => (
   <div className="text-input">
@@ -29,7 +29,7 @@ const TextInput = (props) => (
       onChange={props.onChange}
     />
   </div>
-)
+);
 
 const TextArea = (props) => (
   <div className="text-area">
@@ -44,15 +44,20 @@ const TextArea = (props) => (
       onChange={props.onChange}
     />
   </div>
-)
+);
 
 const Button = (props) => (
   <button disabled={props.disabled} className="button">
     {props.children}
   </button>
-)
+);
 
-export default function Contact(params) {
+export default function Contact() {
+  const [laoding, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const [toast, setToast] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       fullName: '',
@@ -65,12 +70,6 @@ export default function Contact(params) {
       email: Yup.string().email('Invalid email address').required('Required'),
     }),
     onSubmit: (values, { resetForm }) => {
-      // notify()
-      // Swal.fire({
-      //   icon: 'error',
-      //   title: 'Ooops, something went wrong',
-      //   text: 'error.text', eP
-      // })
       toast.promise(
         emailjs
           .send(
@@ -81,11 +80,12 @@ export default function Contact(params) {
           )
           .then(
             function (response) {
-              console.log('SUCCESS!', response.status, response.text)
-              resetForm()
+              console.log('SUCCESS!', response.status, response.text);
+              resetForm();
             },
             function (error) {
-              resetForm()
+              setError(error);
+              resetForm();
             }
           ),
         {
@@ -93,9 +93,9 @@ export default function Contact(params) {
           success: 'Success',
           error: (err) => err?.text ?? 'Something is wrong, please try again',
         }
-      )
+      );
     },
-  })
+  });
 
   return (
     <>
@@ -140,13 +140,15 @@ export default function Contact(params) {
               >
                 Send
               </Button>
+              {error && <div className="error">{error}</div>}
+              {success && <div className="success">{success}</div>}
             </Form>
           </Card>
         </div>
       </div>
       <DismissableToast />
     </>
-  )
+  );
 }
 
 function DismissableToast() {
@@ -189,5 +191,5 @@ function DismissableToast() {
         )}
       </Toaster>
     </div>
-  )
+  );
 }

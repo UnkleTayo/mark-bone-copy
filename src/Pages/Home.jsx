@@ -1,7 +1,7 @@
 import GridContainer from '../components/GridContainer/GridContainer';
 const Home = ({ data }) => {
   return (
-    <div>
+    <div className="home">
       <GridContainer data={data} />
     </div>
   );

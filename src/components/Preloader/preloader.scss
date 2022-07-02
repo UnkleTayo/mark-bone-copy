@@ -1,39 +1,59 @@
-@import '../../styles/breakpoints.scss';
-@import '../../styles/variables.scss';
+@import "../../styles/breakpoints.scss";
+@import "../../styles/variables.scss";
 
 .preloader {
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-  width: 100%;
-  background: $black;
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
-  right: 0;
-  z-index: 50;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: $black;
   color: $white;
-  overflow: hidden !important;
-
   .texts-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 60px;
     min-width: 280px;
-    font-size: 20px;
+    font-size: 24px;
     overflow: hidden;
     font-weight: 800;
     opacity: 0;
     color: $white;
     font-size: 14px;
-    @include media('<=phone') {
+    z-index: 1000;
+    @include media("<=phone") {
       min-width: 240px;
       span {
-        font-size: 12px;
+        font-size: 14px;
       }
     }
+  }
+
+  /* Sliders  */
+  .lightCyan-slider,
+  .first-slider,
+  .white-slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+  }
+  .lightCyan-slider {
+    background: #d5f2ef;
+  }
+
+  .first-slider {
+    background: #fff;
+  }
+
+  .white-slider {
+    background: #000;
   }
 }

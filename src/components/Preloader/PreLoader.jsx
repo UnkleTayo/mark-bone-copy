@@ -1,8 +1,8 @@
-import { useEffect } from 'react'
-import { preLoaderAnim } from '../../animations'
+import { useEffect } from 'react';
+import { preLoaderAnim } from '../../animations';
 // import { motion } from 'framer-motion'
 
-import './preloader.scss'
+import './preloader.scss';
 
 // const container = {
 //   show: {
@@ -13,8 +13,8 @@ import './preloader.scss'
 // }
 const PreLoader = () => {
   useEffect(() => {
-    preLoaderAnim()
-  }, [])
+    preLoaderAnim();
+  }, []);
 
   return (
     <div className="preloader">
@@ -23,8 +23,12 @@ const PreLoader = () => {
         <span>Director,</span>
         <span>Motion Designer.</span>
       </div>
-    </div>
-  )
-}
 
-export default PreLoader
+      {/* <div class="lightCyan-slider"></div> */}
+      <div class="first-slider"></div>
+      <div class="white-slider"></div>
+    </div>
+  );
+};
+
+export default PreLoader;

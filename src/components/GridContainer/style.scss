@@ -3,7 +3,7 @@
 
 .Grid-Container {
   display: grid;
-  grid-gap: 15px;
+  // grid-gap: 15px;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-flow: row;
   @include media("<=tablet") {

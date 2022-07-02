@@ -3,23 +3,26 @@
 @import "./styles/variables.scss";
 .App {
   position: relative;
-  @media only screen and (min-width: 750px) {
-    padding: 0 25px;
-  }
 
-  // .page-divider {
-  //   border-bottom: 1px thin $hoveColor;
-
-  //   &.home {
-  //     border-top: 1px thin $hoveColor;
-  //   }
+  // @media only screen and (min-width: 750px) {
+  //   padding: 0 25px;
   // }
+
+  @include media(">tablet") {
+    min-height: 100vh;
+  }
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  min-height: 100vh;
+  // min-height: 100vh;
+  margin: 0 50px;
+  overflow-x: hidden;
+
+  @include media("<=tablet") {
+    margin: 0;
+  }
 }
 
 .About {
@@ -226,9 +229,9 @@
   .image-container {
     height: 100%;
     width: 50%;
-
+    line-height: 0;
     @include media("<=500px") {
-      width: 80%;
+      width: 90%;
     }
     img {
       object-fit: contain;
@@ -244,24 +247,28 @@
   }
 
   .card {
-    min-width: 200px;
+    min-width: 300px;
 
     @media only screen and (min-width: 751px) {
       min-width: 400px;
     }
-    // background-color: $black;
-    margin: 30px;
-    border-radius: 4px;
+
+    border-radius: 5px;
     box-shadow: 0 2px 10px rgba($secondary, 0.06);
     overflow: hidden;
-    background-color: rgba($color: #000000, $alpha: 0.9);
-    padding: 40px;
+    background-color: #fcfcfc;
+    padding: 20px 50px 40px;
+    box-shadow: 1px 4px 10px 1px #aaa;
   }
 
   h1 {
     // margin: 2rem 2rem 0;
     font-size: 1.62rem;
     color: $primary;
+  }
+
+  form {
+    border-radius: 1px solid green;
   }
 
   // .form {
@@ -391,27 +398,25 @@
 
 .Videos {
   padding: 30px;
-  margin: 20px 10%;
+  margin: 0 2%;
 
-  @include media("<=phone") {
-    margin: 20px 10%;
+  @include media("<=500px") {
+    margin: 0;
   }
 
   &-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
-    gap: 20px;
-
-    @include media("<=phone") {
-      display: block;
+    @include media("<=500px") {
+      grid-template-columns: 1fr;
+      gap: 10px;
     }
   }
 
   &-player {
     position: relative;
-    width: 350px;
-    height: 250px;
+    height: 400px;
   }
 }
 
@@ -420,5 +425,13 @@
   padding: 30px 0;
   margin: 0 10%;
   border-top: 1px solid $hoveColor;
-  border-bottom: 1px solid $hoveColor;
+  border-bottom: 1px soft $hoveColor;
+
+  @include media("<=tablet") {
+    padding: 0;
+    margin: 0;
+    // border: none;
+    border-bottom: none;
+    display: block;
+  }
 }
