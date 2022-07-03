@@ -35,56 +35,27 @@ const Stills = () => {
     }
   }, [data]);
 
-  const [prev, setPrev] = useState(false);
-  const [next, setNext] = useState(false);
-
-  const scrollToTop = () => {
-    window.scrollTo({
+  useEffect(() => {
+    if (!scrollRef.current) return;
+    scrollRef.current.scrollTo(0, 0, {
       top: 0,
       behavior: 'smooth',
     });
-  };
-
-  useEffect(() => {
-    scrollRef.current.scrollTo(0, 0);
-    scrollToTop();
-    // setPageData(still);
   }, []);
+
+  // console.log(pageData);
 
   const dataIndex = data?.projects.findIndex(
     (item) => item?.slug === data?.project?.slug
   );
 
-  useEffect(() => {
-    if (!data && !data?.project && !data?.project) {
-      return;
-    }
-
-    if (dataIndex < 1) {
-      setPrev(true);
-    } else if (dataIndex === data.projects.length - 1) {
-      setNext(true);
-    }
-  }, [data, dataIndex]);
-
   const handlePagination = (whereTo) => {
-    // const dataIndex = data?.projects.findIndex(
-    //   (item) => item.id === data.project.slug
-    // );
     if (whereTo === 'prev') {
       if (dataIndex < 1) {
-        setPrev(true);
-        return;
+        history.push(`/projects/${data?.projects[dataIndex - 1].slug}`);
+      } else {
+        history.push(`/projects/${data?.projects[dataIndex - 1].slug}`);
       }
-      history.push(`/projects/${data?.projects[dataIndex - 1].slug}`);
-    }
-
-    if (whereTo === 'next') {
-      if (dataIndex === data?.projects.length - 1) {
-        setNext(true);
-        return;
-      }
-      history.push(`/projects/${data?.projects[dataIndex + 1].slug}`);
     }
   };
 
@@ -115,19 +86,15 @@ const Stills = () => {
               <div className="stills-navigation">
                 <Link to="/">Back To FILMS</Link>
                 <div className="projectNav">
-                  <span
-                    onClick={() => handlePagination('prev')}
-                    className={`${prev && 'disable'}`}
-                  >
-                    prev
-                  </span>{' '}
-                  /
-                  <span
-                    onClick={() => handlePagination('next')}
-                    className={`${next && 'disable'}`}
-                  >
-                    next
-                  </span>
+                  {dataIndex > 0 && (
+                    <span onClick={() => handlePagination('prev')}>prev</span>
+                  )}
+                  {dataIndex >= 1 && dataIndex < data.projects.length - 1 && (
+                    <span>/</span>
+                  )}
+                  {dataIndex < data.projects.length - 1 && (
+                    <span onClick={() => handlePagination('next')}>next</span>
+                  )}
                 </div>
               </div>
               <div className="image-meta">
