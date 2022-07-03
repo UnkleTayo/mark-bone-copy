@@ -5,6 +5,8 @@ import DOMPurify from 'dompurify';
 import ReactPlayer from 'react-player';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { useHistory } from 'react-router';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
+
 import GridContainer from '../components/GridContainer/GridContainer';
 // import { data } from '../data';
 import { useParams } from 'react-router-dom';
@@ -36,20 +38,18 @@ const Stills = () => {
   const [prev, setPrev] = useState(false);
   const [next, setNext] = useState(false);
 
-  // const scrollToTop = () => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: 'smooth',
-  //   });
-  // };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
-  // useEffect(() => {
-  //   scrollRef.current.scrollTo(0, 0);
-  //   scrollToTop();
-  //   // setPageData(still);
-  // }, []);
-
-  // console.log(pageData);
+  useEffect(() => {
+    scrollRef.current.scrollTo(0, 0);
+    scrollToTop();
+    // setPageData(still);
+  }, []);
 
   const dataIndex = data?.projects.findIndex(
     (item) => item?.slug === data?.project?.slug
@@ -105,12 +105,13 @@ const Stills = () => {
             <h1>{pageData?.name}</h1>
             <div className="still-image">
               {/* <img src={pageData.thumbnail} alt={pageData.name} /> */}
-
-              <ReactPlayer
-                width={`100%`}
-                height={isPageWide ? '700px' : '350px'}
-                url={pageData?.videoUrl}
-              />
+              <LazyLoadComponent>
+                <ReactPlayer
+                  width={`100%`}
+                  height={isPageWide ? '700px' : '350px'}
+                  url={pageData?.videoUrl}
+                />
+              </LazyLoadComponent>
               <div className="stills-navigation">
                 <Link to="/">Back To FILMS</Link>
                 <div className="projectNav">

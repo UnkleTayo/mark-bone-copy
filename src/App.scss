@@ -2,26 +2,19 @@
 @import "./styles/breakpoints.scss";
 @import "./styles/variables.scss";
 .App {
-  position: relative;
-
-  // @media only screen and (min-width: 750px) {
-  //   padding: 0 25px;
-  // }
-
-  @include media(">tablet") {
-    min-height: 100vh;
-  }
-
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  // min-height: 100vh;
-  margin: 0 50px;
-  overflow-x: hidden;
-
+  .Site-content {
+    flex: 1;
+  }
+  @include media(">tablet") {
+    padding: 0 50px;
+  }
   @include media("<=tablet") {
-    margin: 0;
+    padding: 0;
   }
 }
 
@@ -174,7 +167,7 @@
       word-wrap: break-word;
       width: 80%;
       line-height: 1.4;
-      text-align: justify;
+      text-align: center;
     }
   }
 }
@@ -417,17 +410,10 @@
 }
 
 .page-divider {
-  width: 100vw;
-  padding: 30px 0;
-  margin: 0 10%;
-  border-top: 1px solid $hoveColor;
-  border-bottom: 1px soft $hoveColor;
+  width: 100%;
 
-  @include media("<=tablet") {
-    padding: 0;
-    margin: 0;
-    // border: none;
-    border-bottom: none;
-    display: block;
-  }
+  height: 1px;
+  background-color: $hoveColor;
+
+  margin-bottom: 30px;
 }

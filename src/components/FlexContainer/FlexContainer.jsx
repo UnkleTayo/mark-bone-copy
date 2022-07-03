@@ -1,7 +1,7 @@
-import './style.scss'
+import './style.scss';
 
 const FlexContainer = ({ children, ...restProps }) => {
-  return <div className="FlexContainer">{children}</div>
-}
+  return <div className="FlexContainer">{children}</div>;
+};
 
-export default FlexContainer
+export default FlexContainer;
