@@ -1,195 +1,112 @@
-import React, { useState } from 'react';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
-import { toast, ToastBar, Toaster } from 'react-hot-toast';
-import { HiX } from 'react-icons/hi';
-
-/** Components */
-
-const Card = (props) => <div className="card">{props.children}</div>;
-
-const Form = (props) => (
-  <form onSubmit={props.onSubmit} className="form">
-    {props.children}
-  </form>
-);
-
-const TextInput = (props) => (
-  <div className="text-input">
-    <label htmlFor={props.name}></label>
-    <input
-      className={props.focus || props.value !== '' ? 'input-focus' : ''}
-      type={!props.type ? 'text' : props.type}
-      name={props.name}
-      id={props.id}
-      value={props.value}
-      placeholder={props.placeholder}
-      onBlur={props.onBlur}
-      onChange={props.onChange}
-    />
-  </div>
-);
-
-const TextArea = (props) => (
-  <div className="text-area">
-    <label htmlFor={props.name}></label>
-    <textarea
-      className={props.focus || props.value !== '' ? 'input-focus' : ''}
-      name={props.name}
-      id={props.id}
-      value={props.value}
-      placeholder={props.placeholder}
-      onBlur={props.onBlur}
-      onChange={props.onChange}
-    />
-  </div>
-);
-
-const Button = (props) => (
-  <button disabled={props.disabled} className="button">
-    {props.children}
-  </button>
-);
 
 export default function Contact() {
-  const [laoding, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
-  const [toast, setToast] = useState(false);
+  const nameRef = useRef();
+  const formRef = useRef();
+  const emailRef = useRef();
+  const messageRef = useRef();
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  // const [visible, setIsVisible] = useState(false);
 
-  const formik = useFormik({
-    initialValues: {
-      fullName: '',
-      message: '',
-      email: '',
-    },
-    validationSchema: Yup.object({
-      fullName: Yup.string().required('Required'),
-      message: Yup.string().required('Required'),
-      email: Yup.string().email('Invalid email address').required('Required'),
-    }),
-    onSubmit: (values, { resetForm }) => {
-      toast.promise(
-        emailjs
-          .send(
-            'service_ed3fdfm',
-            'template_pyqrtxe',
-            values,
-            'user_K6wYKm2ae4Cr3rRzdrzFP'
-          )
-          .then(
-            function (response) {
-              console.log('SUCCESS!', response.status, response.text);
-              resetForm();
-            },
-            function (error) {
-              setError(error);
-              resetForm();
-            }
-          ),
-        {
-          loading: 'Sending...',
-          success: 'Success',
-          error: (err) => err?.text ?? 'Something is wrong, please try again',
+  // useEffect(() => {
+  //   // message is empty (meaning no errors). Adjust as needed
+  //   if (!error || !success) {
+  //     setIsVisible(false);
+  //     return;
+  //   }
+  //   // error exists. Display the message and hide after 5 secs
+  //   setIsVisible(true);
+  //   const timer = setTimeout(() => {
+  //     setIsVisible(false);
+  //   }, 5000);
+  //   return () => clearTimeout(timer);
+  // }, [error, success]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const payload = {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      message: messageRef.current.value,
+    };
+
+    emailjs
+      .send(
+        'service_ed3fdfm',
+        'template_pyqrtxe',
+        payload,
+        'user_K6wYKm2ae4Cr3rRzdrzFP'
+      )
+      .then(
+        function (response) {
+          setSuccess(response.text);
+          formRef.current.reset();
+        },
+        function (error) {
+          setError(
+            'There was an error sending your message. Please try again later'
+          );
+          formRef.current.reset();
         }
       );
-    },
-  });
+  };
 
   return (
-    <>
-      {' '}
-      <div className="Contact-Me">
-        <div className="container">
-          <Card>
-            <h1>Shoot me Message!</h1>
-            <Form onSubmit={formik.handleSubmit}>
-              <TextInput
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.fullName}
-                type="text"
-                name="fullName"
-                id="fullName"
-                placeholder="Full name"
-              />
-              <TextInput
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.email}
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Your Email"
-              />
-              <TextArea
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.message}
-                type="message"
-                name="message"
-                id="message"
-                placeholder="Your Message"
-                formik={formik}
-              />
-              <Button
-                disabled={!(formik.isValid && formik.dirty)}
-                type="submit"
-                onClick={formik.handleSubmit}
-              >
-                Send
-              </Button>
-              {error && <div className="error">{error}</div>}
-              {success && <div className="success">{success}</div>}
-            </Form>
-          </Card>
+    <div class="Contact-Me container">
+      <h2 className="title">Let's talk</h2>
+      <form className="form" ref={formRef} onSubmit={handleSubmit}>
+        <div className="input-group">
+          <label htmlFor="fullName" class="label">
+            Full Name
+          </label>
+          <input
+            ref={nameRef}
+            id="fullName"
+            type="text"
+            className="input"
+            required
+            placeholder="Your name"
+            name="fullName"
+          />
         </div>
-      </div>
-      <DismissableToast />
-    </>
-  );
-}
-
-function DismissableToast() {
-  return (
-    <div>
-      <Toaster
-        reverseOrder={false}
-        position="top-center"
-        toastOptions={{
-          style: {
-            borderRadius: '8px',
-            background:
-              document.body.getAttribute('data-theme') === 'dark'
-                ? '#fff'
-                : '#0b0b0f',
-            color:
-              document.body.getAttribute('data-theme') === 'dark'
-                ? '#0b0b0f'
-                : '#fff',
-          },
-        }}
-      >
-        {(t) => (
-          <ToastBar toast={t}>
-            {({ icon, message }) => (
-              <>
-                {icon}
-                {message}
-                {t.type !== 'loading' && (
-                  <button
-                    className="p-1 rounded-full ring-primary-400 transition hover:bg-[#444] focus:outline-none focus-visible:ring"
-                    onClick={() => toast.dismiss(t.id)}
-                  >
-                    <HiX />
-                  </button>
-                )}
-              </>
-            )}
-          </ToastBar>
-        )}
-      </Toaster>
+        <div className="input-group">
+          <label htmlFor="email" class="label">
+            Email
+          </label>
+          <input
+            id="email"
+            ref={emailRef}
+            type="email"
+            className="input"
+            required
+            placeholder="ezic@ezicfilworks.com"
+            name="email"
+          />
+        </div>
+        <div className="input-group">
+          <label htmlFor="message" class="label">
+            Your Message
+          </label>
+          <textarea
+            ref={messageRef}
+            id="message"
+            type="text"
+            className="input"
+            required
+            placeholder="Your Message"
+            name="message"
+          />
+        </div>{' '}
+        <div>
+          <input className="button" type="submit" value="Send Message" />
+        </div>
+        <div className="info-container">
+          {error && <span className="error-message">{error}</span>}
+          {success && <p>{success}</p>}
+        </div>
+      </form>
     </div>
   );
 }
