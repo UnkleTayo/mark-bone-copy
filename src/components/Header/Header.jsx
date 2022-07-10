@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import './style.scss';
 
@@ -32,7 +33,10 @@ const Header = () => {
                         className="mobile-submenu"
                         onClick={() => setShowMenu((prev) => !prev)}
                       >
-                        STILLS {!showMenu ? '+' : '-'}{' '}
+                        <span>STILLS</span>
+                        <span>
+                         {showMenu ? <FiChevronUp/> : <FiChevronDown/>}
+                        </span>
                       </div>
                       {showMenu && (
                         <motion.div
@@ -86,7 +90,12 @@ const Header = () => {
             className="header-mobile"
             onClick={() => setShowMobileNav((prev) => !prev)}
           >
+            <span>
             main
+            </span>{' '}
+            <span>
+        {showMobileNav ? <FiChevronUp/> : <FiChevronDown/>}
+            </span>
           </div>
           <div className="page-divider"></div>
         </div>
@@ -112,11 +121,6 @@ const Header = () => {
                     <li className="blog-collection">
                       <Link to="/black-white">BLACK &amp; WHITE</Link>
                     </li>
-
-                    <li className="blog-collection">
-                      <Link to="/videos">Videos</Link>
-                    </li>
-
                     <li className="blog-collection">
                       <a href="https://www.instagram.com/ezicfilmworks">
                         INSTAGRAM

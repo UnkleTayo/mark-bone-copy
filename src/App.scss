@@ -388,7 +388,6 @@
 .Videos {
   padding: 30px;
   margin: 0 2%;
-
   @include media("<=500px") {
     margin: 0;
   }
@@ -405,7 +404,9 @@
 
   &-player {
     position: relative;
-    height: 400px;
+    img{
+      object-fit: cover;
+    }
   }
 }
 
@@ -414,6 +415,12 @@
 
   height: 1px;
   background-color: $hoveColor;
-
+  margin: 0 2%;
   margin-bottom: 30px;
-}
+
+  @include media("<=tablet") {
+     margin: 0 2%; 
+     margin-bottom: 30px;
+    }
+
+  }

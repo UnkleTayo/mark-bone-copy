@@ -24,7 +24,7 @@ export const preLoaderAnim = () => {
       '.first-slider',
       {
         x: '-5%',
-        duration: 1.5,
+        duration: 1,
       },
       '-=1'
     )
@@ -32,7 +32,7 @@ export const preLoaderAnim = () => {
       '.white-slider',
       {
         x: '-10%',
-        duration: 1.5,
+        duration: 1,
       },
       '-=1'
     )
@@ -46,11 +46,11 @@ export const preLoaderAnim = () => {
     )
     .to('.hide', {
       x: '0%',
-      duration: 2,
+      duration: 0.5,
       opacity: 1,
     })
     .from('.texts-container span', {
-      duration: 1.5,
+      duration: .75,
       delay: 1,
       y: 70,
       skewY: 10,
@@ -58,7 +58,7 @@ export const preLoaderAnim = () => {
       ease: 'Power3.easeOut',
     })
     .to('.texts-container span', {
-      duration: 1,
+      duration: 0.8,
       y: 70,
       skewY: -20,
       stagger: 0.2,
@@ -66,7 +66,7 @@ export const preLoaderAnim = () => {
     })
 
     .to('.Home', {
-      duration: 0.05,
+      duration: 0.5,
       css: { overflowY: 'hidden', height: 'unset' },
       ease: 'expo.easeOut',
     })
