@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import React, { useState } from 'react';
 // import ReactPlayer from 'react-player';
 import TNail from '../assets/images/SHOWREEL.png';
+import Play2 from '../assets/images/play.jpg';
 import { BlACk_AND_WHITE_VIDEOS } from '../utils/queries';
 import ModalVideo from 'react-modal-video';
 
@@ -15,7 +16,7 @@ const Videos = () => {
   return (
     <div className="Videos">
       <div className="Videos-content">
-        {[...data?.blackAndWhiteVideos, ...data?.blackAndWhiteVideos, ...data?.blackAndWhiteVideos].map((vid) => (
+        {[...data?.blackAndWhiteVideos].map((vid) => (
           <div key={vid.id} className="Videos-player">
             {/* <button className="btn-primary" onClick={()=> setOpen(true)}>VIEW DEMO</button> */}
             {/* <ReactPlayer
@@ -41,13 +42,21 @@ const Okay = ({ vid }) => {
     <React.Fragment>
       <ModalVideo
         channel="youtube"
-        autoplay
+        // autoplay={false}
         isOpen={isOpen}
         videoId={videoId}
         onClose={() => setOpen(false)}
       />
-      <div className="btn-primary" onClick={() => setOpen(true)}>
+      <div className="thumbnail" onClick={() => setOpen(true)}>
         <img src={TNail} alt="..." />
+        <div class="img">
+          <img
+            src={Play2}
+            height="100px"
+            width="100px"
+            alt="..."
+          />
+        </div>
       </div>
     </React.Fragment>
   );

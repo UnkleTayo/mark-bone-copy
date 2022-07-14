@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import { useQuery } from '@apollo/client';
 
+
 // eslint-disable-next-line no-unused-vars
 import PreLoader from './components/Preloader/PreLoader';
 import About from './Pages/About';
@@ -45,7 +46,7 @@ import Videos from './Pages/Videos';
 
 function App() {
   // const [themeState, setThemeState] = useState(false);
-  const { data } = useQuery(PROJECT_QUERY);
+  const { data, loading } = useQuery(PROJECT_QUERY);
 
   useEffect(() => {
     if (data) {
@@ -68,7 +69,6 @@ function App() {
   // });
 
   return (
-    <AnimatePresence exitBeforeEnter>
       <motion.div
         className="App"
         initial={{ opacity: 0 }}
@@ -81,6 +81,7 @@ function App() {
         </div>
 
         <div className="Site-content">
+        <AnimatePresence initial={false} exitBeforeEnter>
           <Switch>
             <Route path="/about">
               <About />
@@ -97,12 +98,12 @@ function App() {
             <Route path="/contact">
               <Contact />
             </Route>
-            <Route path="/videos">
+            <Route path="/wedding-films">
               <Videos />
             </Route>
             <Route exact path="/">
               <PreLoader />
-              <Home data={data} />
+              <Home data={data} loading={loading} />
             </Route>
             <Route exact path="/projects/:slug">
               <Stills />
@@ -111,11 +112,12 @@ function App() {
               <PageNotFound />
             </Route>
           </Switch>
+        </AnimatePresence>
+
         </div>
 
         <Footer />
       </motion.div>
-    </AnimatePresence>
   );
 }
 

@@ -1,26 +1,40 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 import './style.scss';
+import { fadeIn, fadeOut } from '../../animations';
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
+  const navRef = useRef();
+  const menuRef = useRef();
+
+  showMenu ? fadeIn(navRef.current) : fadeOut(navRef.current)
+  showMobileNav ? fadeIn(menuRef.current) : fadeOut(menuRef.current)
+
+  const location = useLocation();
+
+
+  useEffect(() => {
+    setShowMenu(false);
+    setShowMobileNav(false);
+  }, [location]);
+
+
 
   return (
     <AnimatePresence>
       <div className="header">
         <div className="mobile-menu">
           <div className={`mobile-menu-container ${showMobileNav && 'show'}`}>
-            {showMobileNav && (
-              <motion.div
+              <div
                 key="mobile-menu"
-                initial={{ x: 0, y: 10, opacity: 0 }}
-                animate={{ x: 0, y: 0, opacity: 1, duration: 0.5 }}
-                exit={{ opacity: 0, y: 10, duration: 0.5, delay: 0.5 }}
                 id="menuNav"
+                className='menuNav'
+                ref={menuRef}
               >
                 <nav className="mobile-nav nav">
                   <ul>
@@ -35,37 +49,32 @@ const Header = () => {
                       >
                         <span>STILLS</span>
                         <span>
-                         {showMenu ? <FiChevronUp/> : <FiChevronDown/>}
+                          {showMenu ? <FiChevronUp /> : <FiChevronDown />}
                         </span>
                       </div>
-                      {showMenu && (
-                        <motion.div
-                          initial={{ x: 0, y: 10, opacity: 0 }}
-                          animate={{ x: 0, y: 0, opacity: 1, duration: 0.5 }}
-                          className="mobile-subnav"
-                        >
-                          <ul>
-                            <li className="blog-collection">
-                              <Link to="/black-white">BLACK &amp; WHITE</Link>
-                            </li>
-                            {/* <li className="blog-collection">
-                            <Link to="/videos">Videos</Link>
-                          </li> */}
-                            <li className="blog-collection">
-                              <a
-                                target="_blank"
-                                rel="noreferrer"
-                                href="https://www.instagram.com/ezicfilmworks"
-                              >
-                                INSTAGRAM
-                              </a>
-                            </li>
-                          </ul>
-                        </motion.div>
-                      )}
+
+                      <div
+                        ref={navRef}
+                        className="mobile-subnav"
+                      >
+                        <ul>
+                          <li className="blog-collection">
+                            <Link to="/black-white">BLACK &amp; WHITE</Link>
+                          </li>
+                          <li className="blog-collection">
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              href="https://www.instagram.com/ezicfilmworks"
+                            >
+                              INSTAGRAM
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </li>
                     <li className="page-collection">
-                      <Link to="/videos">Wedding Films</Link>
+                      <Link to="/wedding-films">Wedding Films</Link>
                     </li>
                     <li className="page-collection">
                       <Link to="/motion-design">Motion Design</Link>
@@ -81,21 +90,15 @@ const Header = () => {
                     </li>
                   </ul>
                 </nav>
-              </motion.div>
-            )}
-
+              </div>
             <div className="page-divider"></div>
           </div>
           <div
             className="header-mobile"
             onClick={() => setShowMobileNav((prev) => !prev)}
           >
-            <span>
-            main
-            </span>{' '}
-            <span>
-        {showMobileNav ? <FiChevronUp/> : <FiChevronDown/>}
-            </span>
+            <div>main</div>
+            <div>{showMobileNav ? <FiChevronUp /> : <FiChevronDown />}</div>
           </div>
           <div className="page-divider"></div>
         </div>
@@ -130,7 +133,7 @@ const Header = () => {
                 </div>
               </li>
               <li className="page-collection">
-                <Link to="/videos">Wedding Films</Link>
+                <Link to="/wedding-films">Wedding Films</Link>
               </li>
               <li className="page-collection">
                 <Link to="/motion-design">Motion Design</Link>

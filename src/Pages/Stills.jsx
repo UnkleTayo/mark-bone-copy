@@ -43,19 +43,15 @@ const Stills = () => {
     });
   }, []);
 
-  // console.log(pageData);
-
   const dataIndex = data?.projects.findIndex(
     (item) => item?.slug === data?.project?.slug
   );
 
   const handlePagination = (whereTo) => {
     if (whereTo === 'prev') {
-      if (dataIndex < 1) {
-        history.push(`/projects/${data?.projects[dataIndex - 1].slug}`);
-      } else {
-        history.push(`/projects/${data?.projects[dataIndex - 1].slug}`);
-      }
+      history.push(`/projects/${data?.projects[dataIndex - 1].slug}`);
+    } else {
+      history.push(`/projects/${data?.projects[dataIndex + 1].slug}`);
     }
   };
 

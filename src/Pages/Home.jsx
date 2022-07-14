@@ -1,9 +1,25 @@
 import GridContainer from '../components/GridContainer/GridContainer';
-const Home = ({ data }) => {
+import { motion } from 'framer-motion';
+import SkeletonCard from '../components/SkeletonCard/SkeletonCard';
+
+const transition = { duration: 1, ease: 'easeInOut', delay: 0.8 };
+
+const Home = ({ data, loading }) => {
+  console.log(loading)
   return (
-    <div className="home">
-      <GridContainer data={data} />
-    </div>
+    <>
+      <motion.div
+        exit={{ height: '100vh', transition }}
+        className="transition2"
+      />
+      <div className="home">
+        {!loading ? (
+          <GridContainer data={data} />
+        ) : (
+          <SkeletonCard />
+        )}
+      </div>
+    </>
   );
 };
 

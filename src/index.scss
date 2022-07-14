@@ -89,3 +89,24 @@ code {
   top: 0;
   left: 0;
 }
+
+
+// entry transition class
+.transition {
+  overflow: hidden;
+  height: 0;
+  z-index: 1;
+  background: $black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  // bottom: 0;
+  right: 0;
+}
+
+
+// exit transition class
+.transition2 {
+  @extend .transition;
+  z-index: 5;
+}

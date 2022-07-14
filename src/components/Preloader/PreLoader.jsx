@@ -17,6 +17,7 @@ const PreLoader = () => {
   }, []);
 
   return (
+  // <AnimateEl>
     <div className="preloader">
       <div className="texts-container">
         <span>Cinéaste,</span>
@@ -24,10 +25,11 @@ const PreLoader = () => {
         <span>Motion Designer.</span>
       </div>
 
-      {/* <div class="lightCyan-slider"></div> */}
-      <div class="first-slider"></div>
+      <div class="lightCyan-slider"></div>
+      <div class="persianGreen-slider"></div>
       <div class="white-slider"></div>
     </div>
+    // </AnimateEl>
   );
 };
 

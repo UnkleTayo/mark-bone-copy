@@ -11,74 +11,91 @@ export const preLoaderAnim = () => {
     css: { overflowY: 'hidden' },
     ease: 'power3.inOut',
   })
+  .to(".home", {
+    duration: 0.05,
+    css: { overflowY: "hidden", height: "90vh" },
+  })
+    .to('.lightCyan-slider', {
+      x: '-5%',
+      duration: 1,
+    })
     .to(
-      '.preloader',
+      '.persianGreen-slider',
       {
-        x: 0,
-        duration: 0.05,
-        css: { overflowY: 'hidden', y: 0, opacity: 1, zIndex: 5 },
-      },
-      '-=1'
-    )
-    .to(
-      '.first-slider',
-      {
-        x: '-5%',
-        duration: 1,
+        x: '-10%',
+        duration: 1.5,
       },
       '-=1'
     )
     .to(
       '.white-slider',
       {
-        x: '-10%',
-        duration: 1,
+        x: '-15%',
+        duration: 1.5,
       },
       '-=1'
     )
-    .to(
-      '.texts-container',
-      {
-        opacity: 1,
-        ease: 'Power3.easeOut',
-      },
-      '-=1'
-    )
-    .to('.hide', {
-      x: '0%',
-      duration: 0.5,
+    .to(".texts-container", {
+      duration: 0,
       opacity: 1,
-    })
-    .from('.texts-container span', {
-      duration: .75,
+      ease: "Power3.easeOut",
+    },
+    "-=1")
+    .from(".texts-container span", {
+      duration: 1.5,
       delay: 1,
       y: 70,
       skewY: 10,
       stagger: 0.4,
-      ease: 'Power3.easeOut',
+      ease: "Power3.easeOut",
     })
-    .to('.texts-container span', {
-      duration: 0.8,
+    .to(".texts-container span", {
+      duration: 1,
       y: 70,
       skewY: -20,
       stagger: 0.2,
-      ease: 'Power3.easeOut',
+      ease: "Power3.easeOut",
     })
-
-    .to('.Home', {
-      duration: 0.5,
-      css: { overflowY: 'hidden', height: 'unset' },
-      ease: 'expo.easeOut',
+    .to('.preloader', {
+      x: '250%',
+      duration: 3,
     })
+      .fromTo(
+      '.home',
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+      },
+    )
+    // .to(".home", {
+    //   duration: 0.05,
+    //   css: { overflowY: "hidden", height: "unset" },
+    // })
     .to('body', {
       duration: 0.1,
       css: { overflowY: 'scroll' },
       ease: 'power3.inOut',
     })
-    .to('.preloader', {
-      x: '200%',
-      duration: 3,
+    .to(".preloader", {
+      duration: 0,
+      css: { display: "none" },
     });
+
+
+    // .fromTo(
+    //   '.home',
+    //   {
+    //     opacity: 0,
+    //   },
+    //   {
+    //     opacity: 1,
+    //     duration: 1,
+    //   },
+    //   '-=2'
+    // );
 };
 
 export const openMenu = () => {
@@ -283,10 +300,11 @@ export const boxExit = (e) => {
 
 export const fadeIn = (el) => {
   gsap.to(el, {
-    duration: 2,
+    duration: 1,
     opacity: 1,
-    y: -60,
+    height: 'auto',
     ease: 'power4.out',
+    'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
   });
 };
 
@@ -294,7 +312,8 @@ export const fadeOut = (el) => {
   gsap.to(el, {
     duration: 1,
     opacity: 0,
-    y: -20,
+    height: 0,
     ease: 'power4.out',
+    'clip-path': 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)',
   });
 };
