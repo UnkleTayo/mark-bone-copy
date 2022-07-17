@@ -5,7 +5,6 @@ import SkeletonCard from '../components/SkeletonCard/SkeletonCard';
 const transition = { duration: 1, ease: 'easeInOut', delay: 0.8 };
 
 const Home = ({ data, loading }) => {
-  console.log(loading)
   return (
     <>
       <motion.div

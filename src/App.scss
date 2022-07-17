@@ -23,6 +23,49 @@
   // background: $blueBlack;
   color: $white;
   // z-index: 2;
+
+  &__brands {
+    display: grid;
+    place-content: center;
+    margin-bottom: 3rem;
+    h2 {
+      color: $black;
+      text-align: center;
+      font-size: 2.5rem;
+      padding: 10px 0;
+      @include media("<=tablet") {
+      font-size: 2rem;
+      }
+    }
+
+    &-container {
+      display: grid;
+      place-content: center;
+    }
+    .brand_logos {
+      // display: grid;
+      // grid-template-columns: repeat(3, 1fr);
+
+      @include media("<=tablet") {
+        grid-template-columns: 1fr;
+      }
+      gap: 20px;
+      img {
+        // width: 250px;
+        height: 100px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        margin: 0  40px;
+        transition: filter 0.3s ease-in-out;
+
+
+        &:hover {
+          filter: grayscale(0%);
+        }
+      }
+      // max-width: 70%;
+    }
+  }
   .About-image__container {
     @media only screen and (min-width: 751px) {
       flex: 1;
@@ -410,20 +453,19 @@
 
   &-player {
     position: relative;
-    img{
+    img {
       object-fit: cover;
     }
   }
 
-  .thumbnail{
+  .thumbnail {
     position: relative;
 
-    .img{
+    .img {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-
     }
   }
 }
@@ -436,9 +478,8 @@
   margin-bottom: 30px;
 
   @include media("<=tablet") {
-    //  margin: 0 2%; 
-     margin-bottom: 30px;
-     display: none;
-    }
-
+    //  margin: 0 2%;
+    margin-bottom: 30px;
+    display: none;
   }
+}

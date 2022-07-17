@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import './styles.scss';
-import Backward5 from '../..//assets/images/backward-5.svg';
+import Backward5 from '../../assets/images/backward-5.svg';
 
 function CustomPlayer() {
   const videoRef = useRef(null);

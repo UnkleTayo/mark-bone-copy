@@ -16,6 +16,14 @@ const Header = () => {
   showMobileNav ? fadeIn(menuRef.current) : fadeOut(menuRef.current)
 
   const location = useLocation();
+  
+
+const isWeddingPage = location.pathname.includes('wedding-films')
+
+const headerContent  = () => {
+  return isWeddingPage ? 'Let us be there to capture every kiss, every laugh and every "I do" in a film you can treasure forever.'  : "Cinéaste | Director | Motion Designer"
+}
+
 
 
   useEffect(() => {
@@ -107,7 +115,7 @@ const Header = () => {
             <Link to="/">EZICFILMWORKS</Link>
           </h1>
           <div className="logo-subtitle" data-shrink-original-size="22">
-            Cinéaste | Director | Motion Designer
+            {headerContent()}
           </div>
         </div>
         <div id="topNav" className="desktop-menu">

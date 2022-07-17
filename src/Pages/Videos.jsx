@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import React, { useState } from 'react';
 // import ReactPlayer from 'react-player';
-import TNail from '../assets/images/SHOWREEL.png';
+import TNail from '../assets/images/thumbnail.jpg';
 import Play2 from '../assets/images/play.jpg';
 import { BlACk_AND_WHITE_VIDEOS } from '../utils/queries';
 import ModalVideo from 'react-modal-video';
@@ -18,15 +18,7 @@ const Videos = () => {
       <div className="Videos-content">
         {[...data?.blackAndWhiteVideos].map((vid) => (
           <div key={vid.id} className="Videos-player">
-            {/* <button className="btn-primary" onClick={()=> setOpen(true)}>VIEW DEMO</button> */}
-            {/* <ReactPlayer
-              controls
-              url={vid.videoUrl}
-              height={'100%'}
-              width={'100%'}
-            /> */}
-
-            <Okay vid={vid} />
+            <VideoComponent vid={vid} />
           </div>
         ))}
       </div>
@@ -34,7 +26,7 @@ const Videos = () => {
   );
 };
 
-const Okay = ({ vid }) => {
+const VideoComponent = ({ vid }) => {
   const videoId = vid.videoUrl.split('=')[1];
   const [isOpen, setOpen] = useState(false);
 
@@ -52,8 +44,8 @@ const Okay = ({ vid }) => {
         <div class="img">
           <img
             src={Play2}
-            height="100px"
-            width="100px"
+            height="70px"
+            width="70px"
             alt="..."
           />
         </div>
