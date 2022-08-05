@@ -19,9 +19,9 @@ const PreLoader = () => {
         <span>Motion Designer.</span>
       </div>
 
-      <div class="lightCyan-slider"></div>
-      <div class="persianGreen-slider"></div>
-      <div class="white-slider"></div>
+      <div className="lightCyan-slider"></div>
+      <div className="persianGreen-slider"></div>
+      <div className="white-slider"></div>
     </div>
     // </AnimateEl>
   );

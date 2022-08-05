@@ -36,12 +36,24 @@ export const preLoaderAnim = () => {
       '-=1'
     )
     .to('#logo-anim', {
-      duration: 4.5,
-      // delay: 0.3,
-      css: { fill: '#ffffff' },
-      ease: 'Power3.easeOut',
-    },
-    '-=1'
+      display: 'flex',
+      xPercent: 40,
+      opacity: 1,
+      duration: 1,
+    })
+    .to('#logo-anim', {
+      xPercent: 0,
+      ease: 'Power1.easeIn',
+    })
+    .to(
+      '#logo-anim',
+      {
+        duration: 4.5,
+        // delay: 0.3,
+        css: { fill: '#ffffff' },
+        ease: 'Power1.easeOut',
+      },
+      '-=1'
     )
     .to(
       '.texts-container',
@@ -73,20 +85,47 @@ export const preLoaderAnim = () => {
       stagger: 0.2,
       ease: 'Power1.easeOut',
     })
-    .to('.preloader', {
-      x: '250%',
-      duration: 1.5,
-      ease: 'Power1.easeOut',
+    .to(
+      '.white-slider',
+      {
+        x: 0,
+        duration: 1.5,
+      },
+      '-=1'
+    )
+    .to(
+      '.persianGreen-slider',
+      {
+        x: 0,
+        duration: 1.5,
+      },
+      '-=1'
+    )
+    .to('.lightCyan-slider', {
+      x: 0,
+      duration: 1,
     })
-    .to('body', {
-      duration: 0.1,
-      css: { overflowY: 'scroll' },
-      ease: 'power3.inOut',
-    })
-    .to('.preloader', {
-      duration: 0,
-      css: { display: 'none' },
-    });
+  .to('.preloader', {
+    yPercent: -100,
+    duration: 1.5,
+    ease: 'Power1.easeOut',
+  })
+  .from('.header', {
+    opacity:0,
+    duration: 0.5,
+  }).to('.header',{
+    opacity:1,
+    yPercent: 0,
+  })
+  .to('body', {
+    duration: 0.1,
+    css: { overflowY: 'scroll' },
+    ease: 'power3.inOut',
+  })
+  .to('.preloader', {
+    duration: 0,
+    css: { display: 'none' },
+  });
 };
 
 export const openMenu = () => {

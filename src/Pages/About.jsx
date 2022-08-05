@@ -27,11 +27,11 @@ const About = () => {
     });
     document.title = 'Ezic Filmworks — About';
     // fadeUp(".about-inner", 0.8);
-    gsap.from(".about__inner", {
+    gsap.from('.about__inner', {
       duration: 0.2,
-      delay: .5,
+      delay: 0.5,
       opacity: 0,
-      ease: "Power4.out",
+      ease: 'Power4.out',
     });
   }, []);
 
@@ -41,15 +41,15 @@ const About = () => {
 
   return (
     <>
-      <motion.div
+      {/* <motion.div
         initial={{ height: '100vh' }}
-        animate={{ height: "0%", transition: { ...transition, delay: 1 } }}
+        animate={{ height: '0%', transition: { ...transition, delay: 1 } }}
         className="transition"
       />
       <motion.div
         exit={{ height: '100%', transition }}
         className="transition2"
-      />
+      /> */}
       <motion.div
         initial={{ height: 0, visibility: 'hidden' }}
         animate={{
@@ -59,6 +59,42 @@ const About = () => {
         }}
         className="About"
       >
+        <div className="About__brands">
+          <h2>Brands we've worked with</h2>
+          <div className="About__brands-container">
+            <div className="brand_logos">
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/5f7778941b4691430247fd37/1634286236453-WYM4ZUFV05GU0P6TD9N7/lexux_edited.png?format=300w"
+                alt="lexus_log"
+              />
+
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/5f7778941b4691430247fd37/1634286236453-WYM4ZUFV05GU0P6TD9N7/lexux_edited.png?format=300w"
+                alt="lexus_log"
+              />
+
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/5f7778941b4691430247fd37/1634286236453-WYM4ZUFV05GU0P6TD9N7/lexux_edited.png?format=300w"
+                alt="lexus_log"
+              />
+
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/5f7778941b4691430247fd37/1634286236453-WYM4ZUFV05GU0P6TD9N7/lexux_edited.png?format=300w"
+                alt="lexus_log"
+              />
+
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/5f7778941b4691430247fd37/1634286236453-WYM4ZUFV05GU0P6TD9N7/lexux_edited.png?format=300w"
+                alt="lexus_log"
+              />
+
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/5f7778941b4691430247fd37/1634286236453-WYM4ZUFV05GU0P6TD9N7/lexux_edited.png?format=300w"
+                alt="lexus_log"
+              />
+            </div>
+          </div>
+        </div>
         <div className="about__inner">
           <FlexContainer>
             <div className="About-image__container">
@@ -77,7 +113,7 @@ const About = () => {
           /> */}
             </div>
             <div className="About-content">
-              <h1 className='mt-2'>{data?.profiles[0]?.name}</h1>
+              <h1 className="mt-2">{data?.profiles[0]?.name}</h1>
 
               <div className="About-moreContent">
                 <div
