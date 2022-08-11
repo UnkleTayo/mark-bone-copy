@@ -14,7 +14,7 @@ import { buildImage } from '../utils/cloudinary';
 import { BRANDS } from '../data';
 
 const marqueConfig ={
-  pauseOnHover: false,
+  pauseOnHover: true,
   speed: 80,
   direction: 'right',
   gradientColor:'red'
