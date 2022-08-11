@@ -6,8 +6,8 @@ import Brand1 from './assets/images/beta_logo.png';
 import Brand2 from './assets/images/techsumit.png';
 import Brand3 from './assets/images/efico.png';
 import Brand4 from './assets/images/sygenta.png';
-import Brand5 from './assets/images/warif.PNG';
-import Brand6 from './assets/images/unspotligt.PNG';
+import Brand5 from './assets/images/warif-logo.png';
+import Brand6 from './assets/images/unspotligt.png';
 
 
 
