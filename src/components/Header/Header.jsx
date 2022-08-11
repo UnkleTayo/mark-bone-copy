@@ -90,9 +90,9 @@ const headerContent  = () => {
                     <li className="page-collection">
                       <Link to="/about">About</Link>
                     </li>
-                    <li className="page-collection">
+                    {/* <li className="page-collection">
                       <Link to="/pricing">Pricing</Link>
-                    </li>
+                    </li> */}
                     <li className="page-collection">
                       <Link to="/contact">Contact</Link>
                     </li>
@@ -149,9 +149,9 @@ const headerContent  = () => {
               <li className="page-collection">
                 <Link to="/about">About</Link>
               </li>
-              <li className="page-collection">
+              {/* <li className="page-collection">
                 <Link to="/pricing">Pricing</Link>
-              </li>
+              </li> */}
               <li className="page-collection">
                 <Link to="/contact">Contact</Link>
               </li>

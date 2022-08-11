@@ -5,6 +5,7 @@ import TNail from '../assets/images/thumbnail.jpg';
 import Play2 from '../assets/images/play.jpg';
 import { BlACk_AND_WHITE_VIDEOS } from '../utils/queries';
 import ModalVideo from 'react-modal-video';
+import Pricing from './Pricing';
 
 const Videos = () => {
   const { data, error, loading } = useQuery(BlACk_AND_WHITE_VIDEOS);
@@ -14,15 +15,18 @@ const Videos = () => {
   if (error) return `Error! ${error}`;
 
   return (
-    <div className="Videos">
-      <div className="Videos-content">
-        {[...data?.blackAndWhiteVideos].map((vid) => (
-          <div key={vid.id} className="Videos-player">
-            <VideoComponent vid={vid} />
-          </div>
-        ))}
+    <>
+      <Pricing />
+      <div className="Videos">
+        <div className="Videos-content">
+          {data?.blackAndWhiteVideos.map((vid) => (
+            <div key={vid.id} className="Videos-player">
+              <VideoComponent vid={vid} />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -42,12 +46,7 @@ const VideoComponent = ({ vid }) => {
       <div className="thumbnail" onClick={() => setOpen(true)}>
         <img src={TNail} alt="..." />
         <div class="img">
-          <img
-            src={Play2}
-            height="70px"
-            width="70px"
-            alt="..."
-          />
+          <img src={Play2} height="70px" width="70px" alt="..." />
         </div>
       </div>
     </React.Fragment>
