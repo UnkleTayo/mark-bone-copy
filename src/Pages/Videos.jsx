@@ -16,7 +16,6 @@ const Videos = () => {
 
   return (
     <>
-      <Pricing />
       <div className="Videos">
         <div className="Videos-content">
           {data?.blackAndWhiteVideos.map((vid) => (
@@ -26,6 +25,7 @@ const Videos = () => {
           ))}
         </div>
       </div>
+      <Pricing />
     </>
   );
 };

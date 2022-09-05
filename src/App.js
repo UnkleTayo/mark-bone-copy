@@ -5,7 +5,6 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import { useQuery } from '@apollo/client';
 
-
 // eslint-disable-next-line no-unused-vars
 import PreLoader from './components/Preloader/PreLoader';
 import About from './Pages/About';
@@ -21,8 +20,6 @@ import Pricing from './Pages/Pricing';
 import { PROJECT_QUERY } from './utils/queries';
 import Videos from './Pages/Videos';
 
-
-
 function App() {
   // const [themeState, setThemeState] = useState(false);
   const { data, loading } = useQuery(PROJECT_QUERY);
@@ -34,7 +31,7 @@ function App() {
         JSON.stringify(data.projects)
       );
     }
-  });
+  }, []);
 
   useEffect(() => {
     window.scrollTo({
@@ -43,21 +40,19 @@ function App() {
     });
   }, []);
 
-
-
   return (
-      <motion.div
-        className="App"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
-        <div>
-          <Header />
-          <div className="page-divider"></div>
-        </div>
+    <motion.div
+      className="App"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <div>
+        <Header />
+        <div className="page-divider"></div>
+      </div>
 
-        <div className="Site-content">
+      <div className="Site-content">
         <AnimatePresence initial={false} exitBeforeEnter>
           <Switch>
             <Route path="/about">
@@ -90,11 +85,10 @@ function App() {
             </Route>
           </Switch>
         </AnimatePresence>
+      </div>
 
-        </div>
-
-        <Footer />
-      </motion.div>
+      <Footer />
+    </motion.div>
   );
 }
 
