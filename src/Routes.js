@@ -19,14 +19,14 @@ const Videos = loadable(() => import('./Pages/Videos'));
 const Routes = () => {
   const { data, loading } = useQuery(PROJECT_QUERY);
 
-  React.useEffect(() => {
-    if (data) {
-      window.localStorage.setItem(
-        'EZIC-projects',
-        JSON.stringify(data.projects)
-      );
-    }
-  }, [data]);
+  // React.useEffect(() => {
+  //   if (data) {
+  //     window.localStorage.setItem(
+  //       'EZIC-projects',
+  //       JSON.stringify(data.projects)
+  //     );
+  //   }
+  // }, [data]);
 
   React.useEffect(() => {
     window.scrollTo({

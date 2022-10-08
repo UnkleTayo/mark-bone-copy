@@ -1,19 +1,15 @@
-import loadable from '@loadable/component';
-import { useQuery } from '@apollo/client';
+import FlexContainer from '../components/FlexContainer/FlexContainer';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
-import { useEffect } from 'react';
 import Marquee from 'react-fast-marquee';
-import { BRANDS } from '../data';
-import { buildImage } from '../utils/cloudinary';
-import { sanitizedData } from './Stills';
 
-// import { MyImage } from '../components/LazyImage';
-const MyImage = loadable(() => import('../components/LazyImage'));
-const FlexContainer = loadable(() =>
-  import('../components/FlexContainer/FlexContainer')
-);
-const ABOUT = loadable(() => import('../utils/queries'));
+import { MyImage } from '../components/LazyImage';
+import { ABOUT } from '../utils/queries';
+import { useEffect } from 'react';
+import { useQuery } from '@apollo/client';
+import { sanitizedData } from './Stills';
+import { buildImage } from '../utils/cloudinary';
+import { BRANDS } from '../data';
 
 const marqueConfig = {
   pauseOnHover: true,
@@ -80,9 +76,6 @@ const About = () => {
                   <img src={brand.logo} alt={brand.name} key={brand.id} />
                 ))}
               </Marquee>
-              {/* {BRANDS.map((brand) => (
-                <img src={brand.logo} alt={brand.name} key={brand.id} />
-              ))} */}
             </div>
           </div>
         </div>
