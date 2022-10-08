@@ -11,10 +11,10 @@ export const preLoaderAnim = () => {
     css: { overflowY: 'hidden' },
     ease: 'power3.inOut',
   })
-    .to('.home', {
-      duration: 0.05,
-      css: { overflowY: 'hidden', height: '90vh' },
-    })
+    // .to('.home', {
+    //   duration: 0.05,
+    //   css: { overflowY: 'hidden', height: '90vh' },
+    // })
     .to('.lightCyan-slider', {
       x: '-5%',
       duration: 1,

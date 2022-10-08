@@ -31,7 +31,7 @@ function App() {
         JSON.stringify(data.projects)
       );
     }
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     window.scrollTo({
