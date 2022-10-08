@@ -34,7 +34,7 @@
       font-size: 2.5rem;
       padding: 10px 0;
       @include media("<=tablet") {
-      font-size: 2rem;
+        font-size: 2rem;
       }
     }
 
@@ -55,9 +55,8 @@
         height: 100px;
         object-fit: contain;
         filter: grayscale(100%);
-        margin: 0  40px;
+        margin: 0 40px;
         transition: filter 0.3s ease-in-out;
-
 
         &:hover {
           filter: grayscale(0%);
@@ -198,7 +197,7 @@
   .image-meta {
     margin: 10px 0;
     strong {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -211,12 +210,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: justify;
     p {
       word-wrap: break-word;
-      width: 80%;
+      width: 100%;
       line-height: 1.4;
-      text-align: center;
+      text-align: left;
     }
   }
 }
@@ -382,23 +381,21 @@
 }
 
 .Pricing {
-  text-align: center;
   &-container {
     display: flex;
-    align-items: center;
     justify-content: center;
     @include media("<=phone") {
       flex-direction: column;
+      // display: none;
     }
   }
 
   &-card {
     text-align: center;
     padding: 20px 40px;
-    margin: 40px;
 
     div {
-      padding-top: 40px;
+      padding: 20px 0;
     }
   }
 
@@ -408,11 +405,17 @@
     color: gray;
     text-align: center;
     display: inline-block;
+    font-size: 1.6rem;
   }
 
   &-subtitle {
     color: lighten(#000, 10%);
     font-style: italic;
+  }
+
+  &-button {
+    display: grid;
+    place-content: center;
   }
 
   .btn {

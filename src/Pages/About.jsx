@@ -1,9 +1,7 @@
 import FlexContainer from '../components/FlexContainer/FlexContainer';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
-import Marquee from "react-fast-marquee";
-
-
+import Marquee from 'react-fast-marquee';
 
 import { MyImage } from '../components/LazyImage';
 import { ABOUT } from '../utils/queries';
@@ -13,12 +11,12 @@ import { sanitizedData } from './Stills';
 import { buildImage } from '../utils/cloudinary';
 import { BRANDS } from '../data';
 
-const marqueConfig ={
+const marqueConfig = {
   pauseOnHover: true,
   speed: 80,
   direction: 'right',
-  gradientColor:'red'
-}
+  gradientColor: 'red',
+};
 
 // const ImageProp = {
 //   thumbnail: EzicImage,
@@ -72,16 +70,12 @@ const About = () => {
         <div className="About__brands">
           <h2>Brands we've worked with</h2>
           <div className="About__brands-container">
-
             <div className="brand_logos">
-            <Marquee {...marqueConfig}>
-            {BRANDS.map((brand) => (
-                <img src={brand.logo} alt={brand.name} key={brand.id} />
-             ))}
+              <Marquee {...marqueConfig}>
+                {BRANDS.map((brand) => (
+                  <img src={brand.logo} alt={brand.name} key={brand.id} />
+                ))}
               </Marquee>
-              {/* {BRANDS.map((brand) => (
-                <img src={brand.logo} alt={brand.name} key={brand.id} />
-              ))} */}
             </div>
           </div>
         </div>

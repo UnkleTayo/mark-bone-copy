@@ -11,10 +11,10 @@ export const preLoaderAnim = () => {
     css: { overflowY: 'hidden' },
     ease: 'power3.inOut',
   })
-    .to('.home', {
-      duration: 0.05,
-      css: { overflowY: 'hidden', height: '90vh' },
-    })
+    // .to('.home', {
+    //   duration: 0.05,
+    //   css: { overflowY: 'hidden', height: '90vh' },
+    // })
     .to('.lightCyan-slider', {
       x: '-5%',
       duration: 1,
@@ -40,6 +40,7 @@ export const preLoaderAnim = () => {
       xPercent: 40,
       opacity: 1,
       duration: 1,
+      transform: 'scale(.65)',
     })
     .to('#logo-anim', {
       xPercent: 0,
@@ -105,27 +106,28 @@ export const preLoaderAnim = () => {
       x: 0,
       duration: 1,
     })
-  .to('.preloader', {
-    yPercent: -100,
-    duration: 1.5,
-    ease: 'Power1.easeOut',
-  })
-  .from('.header', {
-    opacity:0,
-    duration: 0.5,
-  }).to('.header',{
-    opacity:1,
-    yPercent: 0,
-  })
-  .to('body', {
-    duration: 0.1,
-    css: { overflowY: 'scroll' },
-    ease: 'power3.inOut',
-  })
-  .to('.preloader', {
-    duration: 0,
-    css: { display: 'none' },
-  });
+    .to('.preloader', {
+      yPercent: -100,
+      duration: 1.5,
+      ease: 'Power1.easeOut',
+    })
+    .from('.header', {
+      opacity: 0,
+      duration: 0.5,
+    })
+    .to('.header', {
+      opacity: 1,
+      yPercent: 0,
+    })
+    .to('body', {
+      duration: 0.1,
+      css: { overflowY: 'scroll' },
+      ease: 'power3.inOut',
+    })
+    .to('.preloader', {
+      duration: 0,
+      css: { display: 'none' },
+    });
 };
 
 export const openMenu = () => {

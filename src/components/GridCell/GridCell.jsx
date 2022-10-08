@@ -14,12 +14,11 @@ const GridCell = ({ details }) => {
   return (
     <div onClick={handleRouting} className="cell-container">
       <div className="overlay">
-        <div className="project-item-count">2</div>
+        {/* <div className="project-item-count">2</div> */}
         <div className="project-title">
           <span>{details.name}</span>
         </div>
       </div>
-      {/* <MyImage image={details} /> */}
       <img
         src={buildImage(details.projectImage?.public_id).toURL()}
         alt={details.name}

@@ -12,7 +12,7 @@ const PreLoader = () => {
   return (
     // <AnimateEl>
     <div className="preloader">
-        <PreloaderSVG />
+      <PreloaderSVG />
       <div className="texts-container">
         <span>Cinéaste,</span>
         <span>Director,</span>
