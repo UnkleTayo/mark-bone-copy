@@ -1,24 +1,26 @@
-import FlexContainer from '../components/FlexContainer/FlexContainer';
+import loadable from '@loadable/component';
+import { useQuery } from '@apollo/client';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
-import Marquee from "react-fast-marquee";
-
-
-
-import { MyImage } from '../components/LazyImage';
-import { ABOUT } from '../utils/queries';
 import { useEffect } from 'react';
-import { useQuery } from '@apollo/client';
-import { sanitizedData } from './Stills';
-import { buildImage } from '../utils/cloudinary';
+import Marquee from 'react-fast-marquee';
 import { BRANDS } from '../data';
+import { buildImage } from '../utils/cloudinary';
+import { sanitizedData } from './Stills';
 
-const marqueConfig ={
+// import { MyImage } from '../components/LazyImage';
+const MyImage = loadable(() => import('../components/LazyImage'));
+const FlexContainer = loadable(() =>
+  import('../components/FlexContainer/FlexContainer')
+);
+const ABOUT = loadable(() => import('../utils/queries'));
+
+const marqueConfig = {
   pauseOnHover: true,
   speed: 80,
   direction: 'right',
-  gradientColor:'red'
-}
+  gradientColor: 'red',
+};
 
 // const ImageProp = {
 //   thumbnail: EzicImage,
@@ -72,12 +74,11 @@ const About = () => {
         <div className="About__brands">
           <h2>Brands we've worked with</h2>
           <div className="About__brands-container">
-
             <div className="brand_logos">
-            <Marquee {...marqueConfig}>
-            {BRANDS.map((brand) => (
-                <img src={brand.logo} alt={brand.name} key={brand.id} />
-             ))}
+              <Marquee {...marqueConfig}>
+                {BRANDS.map((brand) => (
+                  <img src={brand.logo} alt={brand.name} key={brand.id} />
+                ))}
               </Marquee>
               {/* {BRANDS.map((brand) => (
                 <img src={brand.logo} alt={brand.name} key={brand.id} />
