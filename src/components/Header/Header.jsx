@@ -12,93 +12,84 @@ const Header = () => {
   const navRef = useRef();
   const menuRef = useRef();
 
-  showMenu ? fadeIn(navRef.current) : fadeOut(navRef.current)
-  showMobileNav ? fadeIn(menuRef.current) : fadeOut(menuRef.current)
+  showMenu ? fadeIn(navRef.current) : fadeOut(navRef.current);
+  showMobileNav ? fadeIn(menuRef.current) : fadeOut(menuRef.current);
 
   const location = useLocation();
-  
 
-const isWeddingPage = location.pathname.includes('wedding-films')
+  const isWeddingPage = location.pathname.includes('wedding-films');
 
-const headerContent  = () => {
-  return isWeddingPage ? 'Let us be there to capture every kiss, every laugh and every "I do" in a film you can treasure forever.'  : "Cinéaste | Director | Motion Designer"
-}
-
-
+  const headerContent = () => {
+    return isWeddingPage
+      ? 'Let us be there to capture every kiss, every laugh and every "I do" in a film you can treasure forever.'
+      : 'Cinéaste | Director | Motion Designer';
+  };
 
   useEffect(() => {
     setShowMenu(false);
     setShowMobileNav(false);
   }, [location]);
 
-
-
   return (
     <AnimatePresence>
       <div className="header">
         <div className="mobile-menu">
           <div className={`mobile-menu-container ${showMobileNav && 'show'}`}>
-              <div
-                key="mobile-menu"
-                id="menuNav"
-                className='menuNav'
-                ref={menuRef}
-              >
-                <nav className="mobile-nav nav">
-                  <ul>
-                    <li className="index-collection active-link">
-                      <Link to="/">FILMS</Link>
-                    </li>
+            <div
+              key="mobile-menu"
+              id="menuNav"
+              className="menuNav"
+              ref={menuRef}
+            >
+              <nav className="mobile-nav nav">
+                <ul>
+                  <li className="index-collection active-link">
+                    <Link to="/">FILMS</Link>
+                  </li>
 
-                    <li className="mobile-folder-collection">
-                      <div
-                        className="mobile-submenu"
-                        onClick={() => setShowMenu((prev) => !prev)}
-                      >
-                        <span>STILLS</span>
-                        <span>
-                          {showMenu ? <FiChevronUp /> : <FiChevronDown />}
-                        </span>
-                      </div>
+                  <li className="mobile-folder-collection">
+                    <div
+                      className="mobile-submenu"
+                      onClick={() => setShowMenu((prev) => !prev)}
+                    >
+                      <span>STILLS</span>
+                      <span>
+                        {showMenu ? <FiChevronUp /> : <FiChevronDown />}
+                      </span>
+                    </div>
 
-                      <div
-                        ref={navRef}
-                        className="mobile-subnav"
-                      >
-                        <ul>
-                          <li className="blog-collection">
-                            <Link to="/black-white">BLACK &amp; WHITE</Link>
-                          </li>
-                          <li className="blog-collection">
-                            <a
-                              target="_blank"
-                              rel="noreferrer"
-                              href="https://www.instagram.com/ezicfilmworks"
-                            >
-                              INSTAGRAM
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="page-collection">
-                      <Link to="/wedding-films">Wedding Films</Link>
-                    </li>
-                    <li className="page-collection">
-                      <Link to="/motion-design">Motion Design</Link>
-                    </li>
-                    <li className="page-collection">
-                      <Link to="/about">About</Link>
-                    </li>
-                    {/* <li className="page-collection">
-                      <Link to="/pricing">Pricing</Link>
-                    </li> */}
-                    <li className="page-collection">
-                      <Link to="/contact">Contact</Link>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
+                    <div ref={navRef} className="mobile-subnav">
+                      <ul>
+                        <li className="blog-collection">
+                          <Link to="/black-white">BLACK &amp; WHITE</Link>
+                        </li>
+                        <li className="blog-collection">
+                          <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://www.instagram.com/ezicfilmworks"
+                          >
+                            INSTAGRAM
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="page-collection">
+                    <Link to="/wedding-films">Wedding Films</Link>
+                  </li>
+                  <li className="page-collection">
+                    <Link to="/motion-design">Motion Design</Link>
+                  </li>
+                  <li className="page-collection">
+                    <Link to="/about">About</Link>
+                  </li>
+                  <li className="page-collection">
+                    <Link to="/contact">Contact</Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
             <div className="page-divider"></div>
           </div>
           <div
@@ -127,7 +118,7 @@ const headerContent  = () => {
 
               <li className="folder-collection">
                 <div className="desktop-submenu">STILLS</div>
-                <div className="subnav">
+                <li className="subnav">
                   <ul>
                     <li className="blog-collection">
                       <Link to="/black-white">BLACK &amp; WHITE</Link>
@@ -138,7 +129,7 @@ const headerContent  = () => {
                       </a>
                     </li>
                   </ul>
-                </div>
+                </li>
               </li>
               <li className="page-collection">
                 <Link to="/wedding-films">Wedding Films</Link>
